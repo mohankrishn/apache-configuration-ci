@@ -1,0 +1,700 @@
+I, [2019-02-06T17:40:16.813941 #21529]  INFO -- default-centos-69: -----> Cleaning up any prior instances of <default-centos-69>
+I, [2019-02-06T17:40:16.814189 #21529]  INFO -- default-centos-69: -----> Destroying <default-centos-69>...
+I, [2019-02-06T17:40:16.814701 #21529]  INFO -- default-centos-69: Finished destroying <default-centos-69> (0m0.00s).
+I, [2019-02-06T17:40:16.814913 #21529]  INFO -- default-centos-69: -----> Testing <default-centos-69>
+I, [2019-02-06T17:40:16.815079 #21529]  INFO -- default-centos-69: -----> Creating <default-centos-69>...
+I, [2019-02-06T17:40:16.898614 #21529]  INFO -- default-centos-69: Sending build context to Docker daemon  28.16kB
+I, [2019-02-06T17:40:16.933855 #21529]  INFO -- default-centos-69: Step 1/17 : FROM centos:centos6
+I, [2019-02-06T17:40:18.027571 #21529]  INFO -- default-centos-69: centos6: Pulling from library/centos
+I, [2019-02-06T17:40:18.396924 #21529]  INFO -- default-centos-69: 9bfcefca2b8d: Pulling fs layer
+I, [2019-02-06T17:40:19.924322 #21529]  INFO -- default-centos-69: 9bfcefca2b8d: Verifying Checksum
+I, [2019-02-06T17:40:19.924665 #21529]  INFO -- default-centos-69: 9bfcefca2b8d: Download complete
+I, [2019-02-06T17:40:24.459187 #21529]  INFO -- default-centos-69: 9bfcefca2b8d: Pull complete
+I, [2019-02-06T17:40:24.471855 #21529]  INFO -- default-centos-69: Digest: sha256:935c45b2e2c4f01aa5a6ff8625632390c7685835a8dfcfdd50790aabc9c24d11
+I, [2019-02-06T17:40:24.475447 #21529]  INFO -- default-centos-69: Status: Downloaded newer image for centos:centos6
+I, [2019-02-06T17:40:24.475948 #21529]  INFO -- default-centos-69:  ---> 0cbf37812bff
+I, [2019-02-06T17:40:24.476298 #21529]  INFO -- default-centos-69: Step 2/17 : ENV container docker
+I, [2019-02-06T17:40:24.539930 #21529]  INFO -- default-centos-69:  ---> Running in 5d5488034447
+I, [2019-02-06T17:40:24.638143 #21529]  INFO -- default-centos-69: Removing intermediate container 5d5488034447
+I, [2019-02-06T17:40:24.638479 #21529]  INFO -- default-centos-69:  ---> ded8f329d32f
+I, [2019-02-06T17:40:24.638824 #21529]  INFO -- default-centos-69: Step 3/17 : RUN yum clean all
+I, [2019-02-06T17:40:24.658483 #21529]  INFO -- default-centos-69:  ---> Running in 22377c98c3fe
+I, [2019-02-06T17:40:25.132691 #21529]  INFO -- default-centos-69: Loaded plugins: fastestmirror, ovl
+I, [2019-02-06T17:40:25.269800 #21529]  INFO -- default-centos-69: Cleaning repos: base extras updates
+I, [2019-02-06T17:40:25.270304 #21529]  INFO -- default-centos-69: Cleaning up Everything
+I, [2019-02-06T17:40:25.724809 #21529]  INFO -- default-centos-69: Removing intermediate container 22377c98c3fe
+I, [2019-02-06T17:40:25.725167 #21529]  INFO -- default-centos-69:  ---> fe9162e2b2ad
+I, [2019-02-06T17:40:25.725526 #21529]  INFO -- default-centos-69: Step 4/17 : RUN yum install -y sudo openssh-server openssh-clients which curl
+I, [2019-02-06T17:40:25.754588 #21529]  INFO -- default-centos-69:  ---> Running in 293aab15c64c
+I, [2019-02-06T17:40:26.177805 #21529]  INFO -- default-centos-69: Loaded plugins: fastestmirror, ovl
+I, [2019-02-06T17:40:26.312815 #21529]  INFO -- default-centos-69: Setting up Install Process
+I, [2019-02-06T17:40:26.313649 #21529]  INFO -- default-centos-69: Determining fastest mirrors
+I, [2019-02-06T17:40:27.424887 #21529]  INFO -- default-centos-69:  * base: mirrors.cat.pdx.edu
+I, [2019-02-06T17:40:27.425567 #21529]  INFO -- default-centos-69:  * extras: mirrors.cat.pdx.edu
+I, [2019-02-06T17:40:27.426105 #21529]  INFO -- default-centos-69:  * updates: mirrors.cat.pdx.edu
+I, [2019-02-06T17:40:29.586569 #21529]  INFO -- default-centos-69: Package which-2.19-6.el6.x86_64 already installed and latest version
+I, [2019-02-06T17:40:29.587698 #21529]  INFO -- default-centos-69: Package curl-7.19.7-53.el6_9.x86_64 already installed and latest version
+I, [2019-02-06T17:40:29.588098 #21529]  INFO -- default-centos-69: Resolving Dependencies
+I, [2019-02-06T17:40:29.589062 #21529]  INFO -- default-centos-69: --> Running transaction check
+I, [2019-02-06T17:40:29.589490 #21529]  INFO -- default-centos-69: ---> Package openssh-clients.x86_64 0:5.3p1-123.el6_9 will be installed
+I, [2019-02-06T17:40:29.618209 #21529]  INFO -- default-centos-69: --> Processing Dependency: openssh = 5.3p1-123.el6_9 for package: openssh-clients-5.3p1-123.el6_9.x86_64
+I, [2019-02-06T17:40:29.619867 #21529]  INFO -- default-centos-69: --> Processing Dependency: libfipscheck.so.1()(64bit) for package: openssh-clients-5.3p1-123.el6_9.x86_64
+I, [2019-02-06T17:40:29.621844 #21529]  INFO -- default-centos-69: --> Processing Dependency: libedit.so.0()(64bit) for package: openssh-clients-5.3p1-123.el6_9.x86_64
+I, [2019-02-06T17:40:29.623627 #21529]  INFO -- default-centos-69: ---> Package openssh-server.x86_64 0:5.3p1-123.el6_9 will be installed
+I, [2019-02-06T17:40:29.635346 #21529]  INFO -- default-centos-69: --> Processing Dependency: /sbin/service for package: openssh-server-5.3p1-123.el6_9.x86_64
+I, [2019-02-06T17:40:29.636677 #21529]  INFO -- default-centos-69: --> Processing Dependency: libwrap.so.0()(64bit) for package: openssh-server-5.3p1-123.el6_9.x86_64
+I, [2019-02-06T17:40:29.638462 #21529]  INFO -- default-centos-69: ---> Package sudo.x86_64 0:1.8.6p3-29.el6_9 will be installed
+I, [2019-02-06T17:40:29.642907 #21529]  INFO -- default-centos-69: --> Running transaction check
+I, [2019-02-06T17:40:29.643361 #21529]  INFO -- default-centos-69: ---> Package fipscheck-lib.x86_64 0:1.2.0-7.el6 will be installed
+I, [2019-02-06T17:40:29.647450 #21529]  INFO -- default-centos-69: --> Processing Dependency: /usr/bin/fipscheck for package: fipscheck-lib-1.2.0-7.el6.x86_64
+I, [2019-02-06T17:40:29.648621 #21529]  INFO -- default-centos-69: ---> Package initscripts.x86_64 0:9.03.61-1.el6.centos will be installed
+I, [2019-02-06T17:40:29.670259 #21529]  INFO -- default-centos-69: --> Processing Dependency: util-linux-ng >= 2.16 for package: initscripts-9.03.61-1.el6.centos.x86_64
+I, [2019-02-06T17:40:29.673311 #21529]  INFO -- default-centos-69: --> Processing Dependency: upstart >= 0.6.5-11 for package: initscripts-9.03.61-1.el6.centos.x86_64
+I, [2019-02-06T17:40:29.674614 #21529]  INFO -- default-centos-69: --> Processing Dependency: udev >= 125-1 for package: initscripts-9.03.61-1.el6.centos.x86_64
+I, [2019-02-06T17:40:29.675958 #21529]  INFO -- default-centos-69: --> Processing Dependency: sysvinit-tools >= 2.87-6 for package: initscripts-9.03.61-1.el6.centos.x86_64
+I, [2019-02-06T17:40:29.677083 #21529]  INFO -- default-centos-69: --> Processing Dependency: plymouth for package: initscripts-9.03.61-1.el6.centos.x86_64
+I, [2019-02-06T17:40:29.678271 #21529]  INFO -- default-centos-69: --> Processing Dependency: /sbin/pidof for package: initscripts-9.03.61-1.el6.centos.x86_64
+I, [2019-02-06T17:40:29.679044 #21529]  INFO -- default-centos-69: --> Processing Dependency: /sbin/ip for package: initscripts-9.03.61-1.el6.centos.x86_64
+I, [2019-02-06T17:40:29.680234 #21529]  INFO -- default-centos-69: --> Processing Dependency: /sbin/blkid for package: initscripts-9.03.61-1.el6.centos.x86_64
+I, [2019-02-06T17:40:29.681017 #21529]  INFO -- default-centos-69: --> Processing Dependency: /sbin/arping for package: initscripts-9.03.61-1.el6.centos.x86_64
+I, [2019-02-06T17:40:29.682222 #21529]  INFO -- default-centos-69: ---> Package libedit.x86_64 0:2.11-4.20080712cvs.1.el6 will be installed
+I, [2019-02-06T17:40:29.683440 #21529]  INFO -- default-centos-69: ---> Package openssh.x86_64 0:5.3p1-123.el6_9 will be installed
+I, [2019-02-06T17:40:29.688251 #21529]  INFO -- default-centos-69: ---> Package tcp_wrappers-libs.x86_64 0:7.6-58.el6 will be installed
+I, [2019-02-06T17:40:29.690946 #21529]  INFO -- default-centos-69: --> Running transaction check
+I, [2019-02-06T17:40:29.691400 #21529]  INFO -- default-centos-69: ---> Package fipscheck.x86_64 0:1.2.0-7.el6 will be installed
+I, [2019-02-06T17:40:29.692549 #21529]  INFO -- default-centos-69: ---> Package iproute.x86_64 0:2.6.32-57.el6 will be installed
+I, [2019-02-06T17:40:29.697934 #21529]  INFO -- default-centos-69: --> Processing Dependency: iptables >= 1.4.5 for package: iproute-2.6.32-57.el6.x86_64
+I, [2019-02-06T17:40:29.702249 #21529]  INFO -- default-centos-69: --> Processing Dependency: libxtables.so.4()(64bit) for package: iproute-2.6.32-57.el6.x86_64
+I, [2019-02-06T17:40:29.702697 #21529]  INFO -- default-centos-69: ---> Package iputils.x86_64 0:20071127-24.el6 will be installed
+I, [2019-02-06T17:40:29.707011 #21529]  INFO -- default-centos-69: ---> Package plymouth.x86_64 0:0.8.3-29.el6.centos will be installed
+I, [2019-02-06T17:40:29.711716 #21529]  INFO -- default-centos-69: --> Processing Dependency: system-logos for package: plymouth-0.8.3-29.el6.centos.x86_64
+I, [2019-02-06T17:40:29.713005 #21529]  INFO -- default-centos-69: --> Processing Dependency: libdrm_radeon.so.1()(64bit) for package: plymouth-0.8.3-29.el6.centos.x86_64
+I, [2019-02-06T17:40:29.714744 #21529]  INFO -- default-centos-69: --> Processing Dependency: libdrm_nouveau.so.1()(64bit) for package: plymouth-0.8.3-29.el6.centos.x86_64
+I, [2019-02-06T17:40:29.715200 #21529]  INFO -- default-centos-69: --> Processing Dependency: libdrm_intel.so.1()(64bit) for package: plymouth-0.8.3-29.el6.centos.x86_64
+I, [2019-02-06T17:40:29.715574 #21529]  INFO -- default-centos-69: --> Processing Dependency: libdrm.so.2()(64bit) for package: plymouth-0.8.3-29.el6.centos.x86_64
+I, [2019-02-06T17:40:29.715929 #21529]  INFO -- default-centos-69: ---> Package sysvinit-tools.x86_64 0:2.87-6.dsf.el6 will be installed
+I, [2019-02-06T17:40:29.716775 #21529]  INFO -- default-centos-69: ---> Package udev.x86_64 0:147-2.73.el6_8.2 will be installed
+I, [2019-02-06T17:40:29.726564 #21529]  INFO -- default-centos-69: --> Processing Dependency: hwdata for package: udev-147-2.73.el6_8.2.x86_64
+I, [2019-02-06T17:40:29.727691 #21529]  INFO -- default-centos-69: ---> Package upstart.x86_64 0:0.6.5-17.el6 will be installed
+I, [2019-02-06T17:40:29.732382 #21529]  INFO -- default-centos-69: ---> Package util-linux-ng.x86_64 0:2.17.2-12.28.el6_9.2 will be installed
+I, [2019-02-06T17:40:29.744396 #21529]  INFO -- default-centos-69: --> Running transaction check
+I, [2019-02-06T17:40:29.744843 #21529]  INFO -- default-centos-69: ---> Package hwdata.noarch 0:0.233-20.1.el6 will be installed
+I, [2019-02-06T17:40:29.745511 #21529]  INFO -- default-centos-69: ---> Package iptables.x86_64 0:1.4.7-19.el6 will be installed
+I, [2019-02-06T17:40:29.748165 #21529]  INFO -- default-centos-69: --> Processing Dependency: policycoreutils for package: iptables-1.4.7-19.el6.x86_64
+I, [2019-02-06T17:40:29.749310 #21529]  INFO -- default-centos-69: ---> Package libdrm.x86_64 0:2.4.65-2.el6 will be installed
+I, [2019-02-06T17:40:29.751055 #21529]  INFO -- default-centos-69: --> Processing Dependency: libpciaccess.so.0()(64bit) for package: libdrm-2.4.65-2.el6.x86_64
+I, [2019-02-06T17:40:29.752782 #21529]  INFO -- default-centos-69: ---> Package redhat-logos.noarch 0:60.0.14-12.el6.centos will be installed
+I, [2019-02-06T17:40:29.753763 #21529]  INFO -- default-centos-69: --> Running transaction check
+I, [2019-02-06T17:40:29.754173 #21529]  INFO -- default-centos-69: ---> Package libpciaccess.x86_64 0:0.13.4-1.el6 will be installed
+I, [2019-02-06T17:40:29.755318 #21529]  INFO -- default-centos-69: ---> Package policycoreutils.x86_64 0:2.0.83-30.1.el6_8 will be installed
+I, [2019-02-06T17:40:29.764536 #21529]  INFO -- default-centos-69: --> Processing Dependency: libdbus-glib-1.so.2()(64bit) for package: policycoreutils-2.0.83-30.1.el6_8.x86_64
+I, [2019-02-06T17:40:29.766216 #21529]  INFO -- default-centos-69: --> Running transaction check
+I, [2019-02-06T17:40:29.766605 #21529]  INFO -- default-centos-69: ---> Package dbus-glib.x86_64 0:0.86-6.el6 will be installed
+I, [2019-02-06T17:40:29.864244 #21529]  INFO -- default-centos-69: --> Finished Dependency Resolution
+I, [2019-02-06T17:40:29.877713 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:40:29.877762 #21529]  INFO -- default-centos-69: Dependencies Resolved
+I, [2019-02-06T17:40:29.883112 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:40:29.883158 #21529]  INFO -- default-centos-69: ================================================================================
+I, [2019-02-06T17:40:29.883181 #21529]  INFO -- default-centos-69:  Package               Arch       Version                        Repository
+I, [2019-02-06T17:40:29.883242 #21529]  INFO -- default-centos-69:                                                                     Size
+I, [2019-02-06T17:40:29.883268 #21529]  INFO -- default-centos-69: ================================================================================
+I, [2019-02-06T17:40:29.883288 #21529]  INFO -- default-centos-69: Installing:
+I, [2019-02-06T17:40:29.883304 #21529]  INFO -- default-centos-69:  openssh-clients       x86_64     5.3p1-123.el6_9                base     444 k
+I, [2019-02-06T17:40:29.883323 #21529]  INFO -- default-centos-69:  openssh-server        x86_64     5.3p1-123.el6_9                base     329 k
+I, [2019-02-06T17:40:29.883339 #21529]  INFO -- default-centos-69:  sudo                  x86_64     1.8.6p3-29.el6_9               base     711 k
+I, [2019-02-06T17:40:29.883369 #21529]  INFO -- default-centos-69: Installing for dependencies:
+I, [2019-02-06T17:40:29.883390 #21529]  INFO -- default-centos-69:  dbus-glib             x86_64     0.86-6.el6                     base     170 k
+I, [2019-02-06T17:40:29.883404 #21529]  INFO -- default-centos-69:  fipscheck             x86_64     1.2.0-7.el6                    base      14 k
+I, [2019-02-06T17:40:29.883423 #21529]  INFO -- default-centos-69:  fipscheck-lib         x86_64     1.2.0-7.el6                    base     8.3 k
+I, [2019-02-06T17:40:29.883439 #21529]  INFO -- default-centos-69:  hwdata                noarch     0.233-20.1.el6                 base     1.4 M
+I, [2019-02-06T17:40:29.883456 #21529]  INFO -- default-centos-69:  initscripts           x86_64     9.03.61-1.el6.centos           base     949 k
+I, [2019-02-06T17:40:29.883471 #21529]  INFO -- default-centos-69:  iproute               x86_64     2.6.32-57.el6                  base     386 k
+I, [2019-02-06T17:40:29.883489 #21529]  INFO -- default-centos-69:  iptables              x86_64     1.4.7-19.el6                   base     255 k
+I, [2019-02-06T17:40:29.883503 #21529]  INFO -- default-centos-69:  iputils               x86_64     20071127-24.el6                base     121 k
+I, [2019-02-06T17:40:29.883518 #21529]  INFO -- default-centos-69:  libdrm                x86_64     2.4.65-2.el6                   base     136 k
+I, [2019-02-06T17:40:29.883535 #21529]  INFO -- default-centos-69:  libedit               x86_64     2.11-4.20080712cvs.1.el6       base      74 k
+I, [2019-02-06T17:40:29.883551 #21529]  INFO -- default-centos-69:  libpciaccess          x86_64     0.13.4-1.el6                   base      24 k
+I, [2019-02-06T17:40:29.883568 #21529]  INFO -- default-centos-69:  openssh               x86_64     5.3p1-123.el6_9                base     277 k
+I, [2019-02-06T17:40:29.883584 #21529]  INFO -- default-centos-69:  plymouth              x86_64     0.8.3-29.el6.centos            base      89 k
+I, [2019-02-06T17:40:29.883597 #21529]  INFO -- default-centos-69:  policycoreutils       x86_64     2.0.83-30.1.el6_8              base     663 k
+I, [2019-02-06T17:40:29.883614 #21529]  INFO -- default-centos-69:  redhat-logos          noarch     60.0.14-12.el6.centos          base      15 M
+I, [2019-02-06T17:40:29.883628 #21529]  INFO -- default-centos-69:  sysvinit-tools        x86_64     2.87-6.dsf.el6                 base      60 k
+I, [2019-02-06T17:40:29.883642 #21529]  INFO -- default-centos-69:  tcp_wrappers-libs     x86_64     7.6-58.el6                     base      62 k
+I, [2019-02-06T17:40:29.883656 #21529]  INFO -- default-centos-69:  udev                  x86_64     147-2.73.el6_8.2               base     358 k
+I, [2019-02-06T17:40:29.883673 #21529]  INFO -- default-centos-69:  upstart               x86_64     0.6.5-17.el6                   base     177 k
+I, [2019-02-06T17:40:29.883687 #21529]  INFO -- default-centos-69:  util-linux-ng         x86_64     2.17.2-12.28.el6_9.2           base     1.6 M
+I, [2019-02-06T17:40:29.883699 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:40:29.883712 #21529]  INFO -- default-centos-69: Transaction Summary
+I, [2019-02-06T17:40:29.883729 #21529]  INFO -- default-centos-69: ================================================================================
+I, [2019-02-06T17:40:29.883746 #21529]  INFO -- default-centos-69: Install      23 Package(s)
+I, [2019-02-06T17:40:29.883759 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:40:29.889161 #21529]  INFO -- default-centos-69: Total download size: 23 M
+I, [2019-02-06T17:40:29.891065 #21529]  INFO -- default-centos-69: Installed size: 46 M
+I, [2019-02-06T17:40:29.891098 #21529]  INFO -- default-centos-69: Downloading Packages:
+I, [2019-02-06T17:40:32.014626 #21529]  INFO -- default-centos-69: --------------------------------------------------------------------------------
+I, [2019-02-06T17:40:32.015238 #21529]  INFO -- default-centos-69: Total                                            11 MB/s |  23 MB     00:02     
+I, [2019-02-06T17:40:32.016854 #21529]  INFO -- default-centos-69: [91mwarning: [0m[91mrpmts_HdrFromFdno: Header V3 RSA/SHA1 Signature, key ID c105b9de: NOKEY
+I, [2019-02-06T17:40:32.017302 #21529]  INFO -- default-centos-69: [0mRetrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+I, [2019-02-06T17:40:32.022921 #21529]  INFO -- default-centos-69: [91mImporting GPG key 0xC105B9DE:
+I, [2019-02-06T17:40:32.022980 #21529]  INFO -- default-centos-69:  Userid : CentOS-6 Key (CentOS 6 Official Signing Key) <centos-6-key@centos.org>
+I, [2019-02-06T17:40:32.023008 #21529]  INFO -- default-centos-69:  Package: centos-release-6-10.el6.centos.12.3.x86_64 (@CentOS/6.10)
+I, [2019-02-06T17:40:32.023028 #21529]  INFO -- default-centos-69:  From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+I, [2019-02-06T17:40:32.046630 #21529]  INFO -- default-centos-69: [0mRunning rpm_check_debug
+I, [2019-02-06T17:40:32.098886 #21529]  INFO -- default-centos-69: Running Transaction Test
+I, [2019-02-06T17:40:32.143766 #21529]  INFO -- default-centos-69: Transaction Test Succeeded
+I, [2019-02-06T17:40:32.196584 #21529]  INFO -- default-centos-69: Running Transaction
+I, [2019-02-06T17:40:32.468834 #21529]  INFO -- default-centos-69:   Installing : sysvinit-tools-2.87-6.dsf.el6.x86_64                        1/23 
+I, [2019-02-06T17:40:32.490077 #21529]  INFO -- default-centos-69:   Installing : hwdata-0.233-20.1.el6.noarch                                2/23 
+I, [2019-02-06T17:40:32.552140 #21529]  INFO -- default-centos-69:   Installing : libpciaccess-0.13.4-1.el6.x86_64                            3/23 
+I, [2019-02-06T17:40:32.575190 #21529]  INFO -- default-centos-69:   Installing : fipscheck-lib-1.2.0-7.el6.x86_64                            4/23 
+I, [2019-02-06T17:40:32.615908 #21529]  INFO -- default-centos-69:   Installing : fipscheck-1.2.0-7.el6.x86_64                                5/23 
+I, [2019-02-06T17:40:32.646932 #21529]  INFO -- default-centos-69:   Installing : upstart-0.6.5-17.el6.x86_64                                 6/23 
+I, [2019-02-06T17:40:32.673109 #21529]  INFO -- default-centos-69:   Installing : libedit-2.11-4.20080712cvs.1.el6.x86_64                     7/23 
+I, [2019-02-06T17:40:33.142099 #21529]  INFO -- default-centos-69:   Installing : tcp_wrappers-libs-7.6-58.el6.x86_64                         8/23 
+I, [2019-02-06T17:40:33.201967 #21529]  INFO -- default-centos-69:   Installing : redhat-logos-60.0.14-12.el6.centos.noarch                   9/23 
+I, [2019-02-06T17:40:33.342565 #21529]  INFO -- default-centos-69:   Installing : dbus-glib-0.86-6.el6.x86_64                                10/23 
+I, [2019-02-06T17:40:33.439006 #21529]  INFO -- default-centos-69:   Installing : policycoreutils-2.0.83-30.1.el6_8.x86_64                   11/23 
+I, [2019-02-06T17:40:33.552689 #21529]  INFO -- default-centos-69:   Installing : iptables-1.4.7-19.el6.x86_64                               12/23 
+I, [2019-02-06T17:40:33.602718 #21529]  INFO -- default-centos-69:   Installing : iproute-2.6.32-57.el6.x86_64                               13/23 
+I, [2019-02-06T17:40:33.642052 #21529]  INFO -- default-centos-69:   Installing : libdrm-2.4.65-2.el6.x86_64                                 14/23 
+I, [2019-02-06T17:40:33.679350 #21529]  INFO -- default-centos-69:   Installing : iputils-20071127-24.el6.x86_64                             15/23 
+I, [2019-02-06T17:40:33.948902 #21529]  INFO -- default-centos-69:   Installing : plymouth-0.8.3-29.el6.centos.x86_64                        16/23 
+I, [2019-02-06T17:40:34.003965 #21529]  INFO -- default-centos-69:   Installing : util-linux-ng-2.17.2-12.28.el6_9.2.x86_64                  17/23 
+I, [2019-02-06T17:40:34.004047 #21529]  INFO -- default-centos-69: install-info: No such file or directory for /usr/share/info/ipc.info
+I, [2019-02-06T17:40:34.321294 #21529]  INFO -- default-centos-69:   Installing : initscripts-9.03.61-1.el6.centos.x86_64                    18/23 
+I, [2019-02-06T17:40:34.406610 #21529]  INFO -- default-centos-69:   Installing : udev-147-2.73.el6_8.2.x86_64                               19/23 
+I, [2019-02-06T17:40:34.489470 #21529]  INFO -- default-centos-69:   Installing : openssh-5.3p1-123.el6_9.x86_64                             20/23 
+I, [2019-02-06T17:40:34.590697 #21529]  INFO -- default-centos-69:   Installing : openssh-clients-5.3p1-123.el6_9.x86_64                     21/23 
+I, [2019-02-06T17:40:34.716290 #21529]  INFO -- default-centos-69:   Installing : openssh-server-5.3p1-123.el6_9.x86_64                      22/23 
+I, [2019-02-06T17:40:34.762643 #21529]  INFO -- default-centos-69:   Installing : sudo-1.8.6p3-29.el6_9.x86_64                               23/23 
+I, [2019-02-06T17:40:34.772513 #21529]  INFO -- default-centos-69:   Verifying  : openssh-clients-5.3p1-123.el6_9.x86_64                      1/23 
+I, [2019-02-06T17:40:34.780731 #21529]  INFO -- default-centos-69:   Verifying  : fipscheck-1.2.0-7.el6.x86_64                                2/23 
+I, [2019-02-06T17:40:34.788362 #21529]  INFO -- default-centos-69:   Verifying  : udev-147-2.73.el6_8.2.x86_64                                3/23 
+I, [2019-02-06T17:40:34.793182 #21529]  INFO -- default-centos-69:   Verifying  : sudo-1.8.6p3-29.el6_9.x86_64                                4/23 
+I, [2019-02-06T17:40:34.799825 #21529]  INFO -- default-centos-69:   Verifying  : hwdata-0.233-20.1.el6.noarch                                5/23 
+I, [2019-02-06T17:40:34.804590 #21529]  INFO -- default-centos-69:   Verifying  : plymouth-0.8.3-29.el6.centos.x86_64                         6/23 
+I, [2019-02-06T17:40:34.810797 #21529]  INFO -- default-centos-69:   Verifying  : sysvinit-tools-2.87-6.dsf.el6.x86_64                        7/23 
+I, [2019-02-06T17:40:34.816767 #21529]  INFO -- default-centos-69:   Verifying  : dbus-glib-0.86-6.el6.x86_64                                 8/23 
+I, [2019-02-06T17:40:34.821171 #21529]  INFO -- default-centos-69:   Verifying  : fipscheck-lib-1.2.0-7.el6.x86_64                            9/23 
+I, [2019-02-06T17:40:34.828477 #21529]  INFO -- default-centos-69:   Verifying  : openssh-5.3p1-123.el6_9.x86_64                             10/23 
+I, [2019-02-06T17:40:34.837336 #21529]  INFO -- default-centos-69:   Verifying  : libpciaccess-0.13.4-1.el6.x86_64                           11/23 
+I, [2019-02-06T17:40:34.842181 #21529]  INFO -- default-centos-69:   Verifying  : redhat-logos-60.0.14-12.el6.centos.noarch                  12/23 
+I, [2019-02-06T17:40:34.849590 #21529]  INFO -- default-centos-69:   Verifying  : util-linux-ng-2.17.2-12.28.el6_9.2.x86_64                  13/23 
+I, [2019-02-06T17:40:34.854478 #21529]  INFO -- default-centos-69:   Verifying  : iputils-20071127-24.el6.x86_64                             14/23 
+I, [2019-02-06T17:40:34.860818 #21529]  INFO -- default-centos-69:   Verifying  : iptables-1.4.7-19.el6.x86_64                               15/23 
+I, [2019-02-06T17:40:34.865564 #21529]  INFO -- default-centos-69:   Verifying  : iproute-2.6.32-57.el6.x86_64                               16/23 
+I, [2019-02-06T17:40:34.872497 #21529]  INFO -- default-centos-69:   Verifying  : tcp_wrappers-libs-7.6-58.el6.x86_64                        17/23 
+I, [2019-02-06T17:40:34.878153 #21529]  INFO -- default-centos-69:   Verifying  : libedit-2.11-4.20080712cvs.1.el6.x86_64                    18/23 
+I, [2019-02-06T17:40:34.887969 #21529]  INFO -- default-centos-69:   Verifying  : upstart-0.6.5-17.el6.x86_64                                19/23 
+I, [2019-02-06T17:40:34.895773 #21529]  INFO -- default-centos-69:   Verifying  : initscripts-9.03.61-1.el6.centos.x86_64                    20/23 
+I, [2019-02-06T17:40:34.902102 #21529]  INFO -- default-centos-69:   Verifying  : policycoreutils-2.0.83-30.1.el6_8.x86_64                   21/23 
+I, [2019-02-06T17:40:34.907476 #21529]  INFO -- default-centos-69:   Verifying  : openssh-server-5.3p1-123.el6_9.x86_64                      22/23 
+I, [2019-02-06T17:40:34.937071 #21529]  INFO -- default-centos-69:   Verifying  : libdrm-2.4.65-2.el6.x86_64                                 23/23 
+I, [2019-02-06T17:40:34.937148 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:40:34.937175 #21529]  INFO -- default-centos-69: Installed:
+I, [2019-02-06T17:40:34.937195 #21529]  INFO -- default-centos-69:   openssh-clients.x86_64 0:5.3p1-123.el6_9                                      
+I, [2019-02-06T17:40:34.937214 #21529]  INFO -- default-centos-69:   openssh-server.x86_64 0:5.3p1-123.el6_9                                       
+I, [2019-02-06T17:40:34.937232 #21529]  INFO -- default-centos-69:   sudo.x86_64 0:1.8.6p3-29.el6_9                                                
+I, [2019-02-06T17:40:34.937247 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:40:34.937262 #21529]  INFO -- default-centos-69: Dependency Installed:
+I, [2019-02-06T17:40:34.937278 #21529]  INFO -- default-centos-69:   dbus-glib.x86_64 0:0.86-6.el6                                                 
+I, [2019-02-06T17:40:34.937294 #21529]  INFO -- default-centos-69:   fipscheck.x86_64 0:1.2.0-7.el6                                                
+I, [2019-02-06T17:40:34.937310 #21529]  INFO -- default-centos-69:   fipscheck-lib.x86_64 0:1.2.0-7.el6                                            
+I, [2019-02-06T17:40:34.937327 #21529]  INFO -- default-centos-69:   hwdata.noarch 0:0.233-20.1.el6                                                
+I, [2019-02-06T17:40:34.937343 #21529]  INFO -- default-centos-69:   initscripts.x86_64 0:9.03.61-1.el6.centos                                     
+I, [2019-02-06T17:40:34.937359 #21529]  INFO -- default-centos-69:   iproute.x86_64 0:2.6.32-57.el6                                                
+I, [2019-02-06T17:40:34.937375 #21529]  INFO -- default-centos-69:   iptables.x86_64 0:1.4.7-19.el6                                                
+I, [2019-02-06T17:40:34.937391 #21529]  INFO -- default-centos-69:   iputils.x86_64 0:20071127-24.el6                                              
+I, [2019-02-06T17:40:34.937407 #21529]  INFO -- default-centos-69:   libdrm.x86_64 0:2.4.65-2.el6                                                  
+I, [2019-02-06T17:40:34.937423 #21529]  INFO -- default-centos-69:   libedit.x86_64 0:2.11-4.20080712cvs.1.el6                                     
+I, [2019-02-06T17:40:34.937439 #21529]  INFO -- default-centos-69:   libpciaccess.x86_64 0:0.13.4-1.el6                                            
+I, [2019-02-06T17:40:34.937456 #21529]  INFO -- default-centos-69:   openssh.x86_64 0:5.3p1-123.el6_9                                              
+I, [2019-02-06T17:40:34.937472 #21529]  INFO -- default-centos-69:   plymouth.x86_64 0:0.8.3-29.el6.centos                                         
+I, [2019-02-06T17:40:34.937487 #21529]  INFO -- default-centos-69:   policycoreutils.x86_64 0:2.0.83-30.1.el6_8                                    
+I, [2019-02-06T17:40:34.937503 #21529]  INFO -- default-centos-69:   redhat-logos.noarch 0:60.0.14-12.el6.centos                                   
+I, [2019-02-06T17:40:34.937518 #21529]  INFO -- default-centos-69:   sysvinit-tools.x86_64 0:2.87-6.dsf.el6                                        
+I, [2019-02-06T17:40:34.937537 #21529]  INFO -- default-centos-69:   tcp_wrappers-libs.x86_64 0:7.6-58.el6                                         
+I, [2019-02-06T17:40:34.937560 #21529]  INFO -- default-centos-69:   udev.x86_64 0:147-2.73.el6_8.2                                                
+I, [2019-02-06T17:40:34.937578 #21529]  INFO -- default-centos-69:   upstart.x86_64 0:0.6.5-17.el6                                                 
+I, [2019-02-06T17:40:34.937593 #21529]  INFO -- default-centos-69:   util-linux-ng.x86_64 0:2.17.2-12.28.el6_9.2                                   
+I, [2019-02-06T17:40:34.937608 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:40:34.938473 #21529]  INFO -- default-centos-69: Complete!
+I, [2019-02-06T17:40:36.892002 #21529]  INFO -- default-centos-69: Removing intermediate container 293aab15c64c
+I, [2019-02-06T17:40:36.892345 #21529]  INFO -- default-centos-69:  ---> 059e5ac428bf
+I, [2019-02-06T17:40:36.892668 #21529]  INFO -- default-centos-69: Step 5/17 : RUN [ -f "/etc/ssh/ssh_host_rsa_key" ] || ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -N ''
+I, [2019-02-06T17:40:36.915203 #21529]  INFO -- default-centos-69:  ---> Running in 40eadba4bae7
+I, [2019-02-06T17:40:37.252671 #21529]  INFO -- default-centos-69: Generating public/private rsa key pair.
+I, [2019-02-06T17:40:37.252735 #21529]  INFO -- default-centos-69: Your identification has been saved in /etc/ssh/ssh_host_rsa_key.
+I, [2019-02-06T17:40:37.252771 #21529]  INFO -- default-centos-69: Your public key has been saved in /etc/ssh/ssh_host_rsa_key.pub.
+I, [2019-02-06T17:40:37.252790 #21529]  INFO -- default-centos-69: The key fingerprint is:
+I, [2019-02-06T17:40:37.252805 #21529]  INFO -- default-centos-69: 80:e0:f7:98:22:29:e2:df:25:c1:aa:73:39:f0:50:92 root@40eadba4bae7
+I, [2019-02-06T17:40:37.252820 #21529]  INFO -- default-centos-69: The key's randomart image is:
+I, [2019-02-06T17:40:37.252834 #21529]  INFO -- default-centos-69: +--[ RSA 2048]----+
+I, [2019-02-06T17:40:37.252848 #21529]  INFO -- default-centos-69: |  .              |
+I, [2019-02-06T17:40:37.252861 #21529]  INFO -- default-centos-69: | . . .           |
+I, [2019-02-06T17:40:37.252874 #21529]  INFO -- default-centos-69: |  o o .          |
+I, [2019-02-06T17:40:37.252887 #21529]  INFO -- default-centos-69: | E o.+ .         |
+I, [2019-02-06T17:40:37.252900 #21529]  INFO -- default-centos-69: |= + oo. S        |
+I, [2019-02-06T17:40:37.252913 #21529]  INFO -- default-centos-69: |++ .. .          |
+I, [2019-02-06T17:40:37.252926 #21529]  INFO -- default-centos-69: | .+... .         |
+I, [2019-02-06T17:40:37.252938 #21529]  INFO -- default-centos-69: | .o=. o          |
+I, [2019-02-06T17:40:37.252950 #21529]  INFO -- default-centos-69: | .o...           |
+I, [2019-02-06T17:40:37.252963 #21529]  INFO -- default-centos-69: +-----------------+
+I, [2019-02-06T17:40:37.470868 #21529]  INFO -- default-centos-69: Removing intermediate container 40eadba4bae7
+I, [2019-02-06T17:40:37.471207 #21529]  INFO -- default-centos-69:  ---> 27e42a956de7
+I, [2019-02-06T17:40:37.471527 #21529]  INFO -- default-centos-69: Step 6/17 : RUN [ -f "/etc/ssh/ssh_host_dsa_key" ] || ssh-keygen -t dsa -f /etc/ssh/ssh_host_dsa_key -N ''
+I, [2019-02-06T17:40:37.490454 #21529]  INFO -- default-centos-69:  ---> Running in 1b264b94ab53
+I, [2019-02-06T17:40:37.853833 #21529]  INFO -- default-centos-69: Generating public/private dsa key pair.
+I, [2019-02-06T17:40:37.853897 #21529]  INFO -- default-centos-69: Your identification has been saved in /etc/ssh/ssh_host_dsa_key.
+I, [2019-02-06T17:40:37.853947 #21529]  INFO -- default-centos-69: Your public key has been saved in /etc/ssh/ssh_host_dsa_key.pub.
+I, [2019-02-06T17:40:37.853965 #21529]  INFO -- default-centos-69: The key fingerprint is:
+I, [2019-02-06T17:40:37.853980 #21529]  INFO -- default-centos-69: 7b:7f:63:6e:b6:65:49:cf:fd:d2:8c:8c:6b:af:a7:d3 root@1b264b94ab53
+I, [2019-02-06T17:40:37.853995 #21529]  INFO -- default-centos-69: The key's randomart image is:
+I, [2019-02-06T17:40:37.854009 #21529]  INFO -- default-centos-69: +--[ DSA 1024]----+
+I, [2019-02-06T17:40:37.854023 #21529]  INFO -- default-centos-69: |                 |
+I, [2019-02-06T17:40:37.854039 #21529]  INFO -- default-centos-69: |                 |
+I, [2019-02-06T17:40:37.854059 #21529]  INFO -- default-centos-69: |                 |
+I, [2019-02-06T17:40:37.854074 #21529]  INFO -- default-centos-69: |                 |
+I, [2019-02-06T17:40:37.854087 #21529]  INFO -- default-centos-69: |        S      . |
+I, [2019-02-06T17:40:37.854100 #21529]  INFO -- default-centos-69: |         .    ..+|
+I, [2019-02-06T17:40:37.854112 #21529]  INFO -- default-centos-69: |        . .  + =*|
+I, [2019-02-06T17:40:37.854125 #21529]  INFO -- default-centos-69: |         . .+ Eo+|
+I, [2019-02-06T17:40:37.854138 #21529]  INFO -- default-centos-69: |           .=&++.|
+I, [2019-02-06T17:40:37.854151 #21529]  INFO -- default-centos-69: +-----------------+
+I, [2019-02-06T17:40:38.085018 #21529]  INFO -- default-centos-69: Removing intermediate container 1b264b94ab53
+I, [2019-02-06T17:40:38.085364 #21529]  INFO -- default-centos-69:  ---> 1b25ca1bddb1
+I, [2019-02-06T17:40:38.085708 #21529]  INFO -- default-centos-69: Step 7/17 : RUN if ! getent passwd kitchen; then                 useradd -d /home/kitchen -m -s /bin/bash -p '*' kitchen;               fi
+I, [2019-02-06T17:40:38.104450 #21529]  INFO -- default-centos-69:  ---> Running in aaf83c744cb1
+I, [2019-02-06T17:40:38.671864 #21529]  INFO -- default-centos-69: Removing intermediate container aaf83c744cb1
+I, [2019-02-06T17:40:38.672189 #21529]  INFO -- default-centos-69:  ---> 448a0b02b7a5
+I, [2019-02-06T17:40:38.672516 #21529]  INFO -- default-centos-69: Step 8/17 : RUN echo "kitchen ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+I, [2019-02-06T17:40:38.691641 #21529]  INFO -- default-centos-69:  ---> Running in 61ccb5f1b3d8
+I, [2019-02-06T17:40:39.192543 #21529]  INFO -- default-centos-69: Removing intermediate container 61ccb5f1b3d8
+I, [2019-02-06T17:40:39.192870 #21529]  INFO -- default-centos-69:  ---> 0a16192e2fa9
+I, [2019-02-06T17:40:39.193211 #21529]  INFO -- default-centos-69: Step 9/17 : RUN echo "Defaults !requiretty" >> /etc/sudoers
+I, [2019-02-06T17:40:39.212546 #21529]  INFO -- default-centos-69:  ---> Running in c0e71eb3f3d7
+I, [2019-02-06T17:40:39.722920 #21529]  INFO -- default-centos-69: Removing intermediate container c0e71eb3f3d7
+I, [2019-02-06T17:40:39.723268 #21529]  INFO -- default-centos-69:  ---> 64a9daaf79dc
+I, [2019-02-06T17:40:39.723602 #21529]  INFO -- default-centos-69: Step 10/17 : RUN mkdir -p /home/kitchen/.ssh
+I, [2019-02-06T17:40:39.743501 #21529]  INFO -- default-centos-69:  ---> Running in a8804497b0ec
+I, [2019-02-06T17:40:40.256141 #21529]  INFO -- default-centos-69: Removing intermediate container a8804497b0ec
+I, [2019-02-06T17:40:40.256487 #21529]  INFO -- default-centos-69:  ---> 4542c663111a
+I, [2019-02-06T17:40:40.256833 #21529]  INFO -- default-centos-69: Step 11/17 : RUN chown -R kitchen /home/kitchen/.ssh
+I, [2019-02-06T17:40:40.276890 #21529]  INFO -- default-centos-69:  ---> Running in e19c8fcb3551
+I, [2019-02-06T17:40:40.787732 #21529]  INFO -- default-centos-69: Removing intermediate container e19c8fcb3551
+I, [2019-02-06T17:40:40.788079 #21529]  INFO -- default-centos-69:  ---> b629f5440482
+I, [2019-02-06T17:40:40.788453 #21529]  INFO -- default-centos-69: Step 12/17 : RUN chmod 0700 /home/kitchen/.ssh
+I, [2019-02-06T17:40:40.808777 #21529]  INFO -- default-centos-69:  ---> Running in 146637073fc2
+I, [2019-02-06T17:40:41.337914 #21529]  INFO -- default-centos-69: Removing intermediate container 146637073fc2
+I, [2019-02-06T17:40:41.338248 #21529]  INFO -- default-centos-69:  ---> 9512bb7443ce
+I, [2019-02-06T17:40:41.338618 #21529]  INFO -- default-centos-69: Step 13/17 : RUN touch /home/kitchen/.ssh/authorized_keys
+I, [2019-02-06T17:40:41.357478 #21529]  INFO -- default-centos-69:  ---> Running in 15fdd070d77d
+I, [2019-02-06T17:40:41.857144 #21529]  INFO -- default-centos-69: Removing intermediate container 15fdd070d77d
+I, [2019-02-06T17:40:41.857483 #21529]  INFO -- default-centos-69:  ---> c4605cccf639
+I, [2019-02-06T17:40:41.857844 #21529]  INFO -- default-centos-69: Step 14/17 : RUN chown kitchen /home/kitchen/.ssh/authorized_keys
+I, [2019-02-06T17:40:41.877965 #21529]  INFO -- default-centos-69:  ---> Running in 1c94941150e6
+I, [2019-02-06T17:40:42.388062 #21529]  INFO -- default-centos-69: Removing intermediate container 1c94941150e6
+I, [2019-02-06T17:40:42.388401 #21529]  INFO -- default-centos-69:  ---> 6478442e5bd8
+I, [2019-02-06T17:40:42.388755 #21529]  INFO -- default-centos-69: Step 15/17 : RUN chmod 0600 /home/kitchen/.ssh/authorized_keys
+I, [2019-02-06T17:40:42.408668 #21529]  INFO -- default-centos-69:  ---> Running in 2eebf168e48f
+I, [2019-02-06T17:40:42.931019 #21529]  INFO -- default-centos-69: Removing intermediate container 2eebf168e48f
+I, [2019-02-06T17:40:42.931371 #21529]  INFO -- default-centos-69:  ---> 7f541b56c4f9
+I, [2019-02-06T17:40:42.931740 #21529]  INFO -- default-centos-69: Step 16/17 : RUN mkdir -p /run/sshd
+I, [2019-02-06T17:40:42.950592 #21529]  INFO -- default-centos-69:  ---> Running in f4f7f9c75013
+I, [2019-02-06T17:40:43.467380 #21529]  INFO -- default-centos-69: Removing intermediate container f4f7f9c75013
+I, [2019-02-06T17:40:43.467725 #21529]  INFO -- default-centos-69:  ---> b6b955f7e47f
+I, [2019-02-06T17:40:43.468102 #21529]  INFO -- default-centos-69: Step 17/17 : RUN echo ssh-rsa\ AAAAB3NzaC1yc2EAAAADAQABAAABAQC9S3sBs/LR1j\+jr1SRferb9pQqgCq3JRextSHsq0Apbwu\+O6VEhEgN6SwEn\+deWHsvkwBPbr64St7vFdml7BHImuk3bGn2bubQcut49LDq9nB7p0ssljLK4oWCsQ8RfI8SWWFpTy1QNVBBrLn9LjKe2JMwjILPjlHN2HbVyb4JE6sgBM2YLt2Dj9mr74UC7LnrbJWx0n7aVnBiFE/2V5dRzCWMt6MD9FdzXQQR/1eTYqaNiA6JXyq1g5IriEfIfMcBDrUsjkVHHy1ZpEg\+rhcTUx0w1q6KuMPbYopVZa1qGKAqMMmrHviGOdHWLuTQmbS\+QM0KfKGbRlocKiS16iET\ kitchen_docker_key >> /home/kitchen/.ssh/authorized_keys
+I, [2019-02-06T17:40:43.489147 #21529]  INFO -- default-centos-69:  ---> Running in afcedc8a9893
+I, [2019-02-06T17:40:43.993686 #21529]  INFO -- default-centos-69: Removing intermediate container afcedc8a9893
+I, [2019-02-06T17:40:43.994039 #21529]  INFO -- default-centos-69:  ---> affc587473e4
+I, [2019-02-06T17:40:43.994962 #21529]  INFO -- default-centos-69: Successfully built affc587473e4
+I, [2019-02-06T17:40:44.106635 #21529]  INFO -- default-centos-69: 57c463010b5f1d794e83e0c00c4a6a9d22e687c02b9a2a68ffe972d3e6ab8a8b
+I, [2019-02-06T17:40:44.508071 #21529]  INFO -- default-centos-69: 0.0.0.0:32768
+I, [2019-02-06T17:40:44.628447 #21529]  INFO -- default-centos-69: [SSH] Established
+I, [2019-02-06T17:40:44.629785 #21529]  INFO -- default-centos-69: Finished creating <default-centos-69> (0m27.81s).
+I, [2019-02-06T17:40:44.630140 #21529]  INFO -- default-centos-69: -----> Converging <default-centos-69>...
+I, [2019-02-06T17:40:44.630628 #21529]  INFO -- default-centos-69: Preparing files for transfer
+I, [2019-02-06T17:40:44.630681 #21529]  INFO -- default-centos-69: Preparing playbook
+I, [2019-02-06T17:40:44.631098 #21529]  INFO -- default-centos-69: Preparing inventory
+I, [2019-02-06T17:40:44.631213 #21529]  INFO -- default-centos-69: Preparing modules
+I, [2019-02-06T17:40:44.631408 #21529]  INFO -- default-centos-69: nothing to do for modules
+I, [2019-02-06T17:40:44.631492 #21529]  INFO -- default-centos-69: Preparing roles
+I, [2019-02-06T17:40:44.638084 #21529]  INFO -- default-centos-69: Preparing ansible.cfg file
+I, [2019-02-06T17:40:44.638232 #21529]  INFO -- default-centos-69: Empty ansible.cfg generated
+I, [2019-02-06T17:40:44.638384 #21529]  INFO -- default-centos-69: Preparing group_vars
+I, [2019-02-06T17:40:44.638521 #21529]  INFO -- default-centos-69: nothing to do for group_vars
+I, [2019-02-06T17:40:44.638588 #21529]  INFO -- default-centos-69: Preparing additional_copy_path
+I, [2019-02-06T17:40:44.638654 #21529]  INFO -- default-centos-69: Copy additional path: .
+I, [2019-02-06T17:40:44.640219 #21529]  INFO -- default-centos-69: Preparing host_vars
+I, [2019-02-06T17:40:44.640372 #21529]  INFO -- default-centos-69: nothing to do for host_vars
+I, [2019-02-06T17:40:44.640452 #21529]  INFO -- default-centos-69: Preparing hosts file
+I, [2019-02-06T17:40:44.640568 #21529]  INFO -- default-centos-69: Preparing spec
+I, [2019-02-06T17:40:44.640674 #21529]  INFO -- default-centos-69: nothing to do for spec
+I, [2019-02-06T17:40:44.640743 #21529]  INFO -- default-centos-69: Preparing library plugins
+I, [2019-02-06T17:40:44.640891 #21529]  INFO -- default-centos-69: nothing to do for library plugins
+I, [2019-02-06T17:40:44.640963 #21529]  INFO -- default-centos-69: Preparing callback plugins
+I, [2019-02-06T17:40:44.641101 #21529]  INFO -- default-centos-69: nothing to do for callback plugins
+I, [2019-02-06T17:40:44.641167 #21529]  INFO -- default-centos-69: Preparing filter_plugins
+I, [2019-02-06T17:40:44.641312 #21529]  INFO -- default-centos-69: nothing to do for filter_plugins
+I, [2019-02-06T17:40:44.641376 #21529]  INFO -- default-centos-69: Preparing lookup_plugins
+I, [2019-02-06T17:40:44.641509 #21529]  INFO -- default-centos-69: nothing to do for lookup_plugins
+I, [2019-02-06T17:40:44.641620 #21529]  INFO -- default-centos-69: Preparing ansible vault password
+I, [2019-02-06T17:40:44.641732 #21529]  INFO -- default-centos-69: Preparing additional_ssh_private_keys
+I, [2019-02-06T17:40:44.641833 #21529]  INFO -- default-centos-69: nothing to do for additional_ssh_private_keys
+I, [2019-02-06T17:40:44.641907 #21529]  INFO -- default-centos-69: Finished Preparing files for transfer
+I, [2019-02-06T17:40:44.642180 #21529]  INFO -- default-centos-69: Installing ansible, will try to determine platform os
+I, [2019-02-06T17:40:44.715641 #21529]  INFO -- default-centos-69: which: no ansible in (/usr/local/bin:/bin:/usr/bin)
+I, [2019-02-06T17:40:44.718101 #21529]  INFO -- default-centos-69: which: no ansible in (/usr/local/bin:/bin:/usr/bin)
+I, [2019-02-06T17:40:44.831191 #21529]  INFO -- default-centos-69: Failed to set locale, defaulting to C
+I, [2019-02-06T17:40:44.842203 #21529]  INFO -- default-centos-69: ovl: Error while doing RPMdb copy-up:
+I, [2019-02-06T17:40:44.842265 #21529]  INFO -- default-centos-69: [Errno 13] Permission denied: '/var/lib/rpm/Basenames'
+I, [2019-02-06T17:40:48.043149 #21529]  INFO -- default-centos-69: Retrieving https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
+I, [2019-02-06T17:40:48.406358 #21529]  INFO -- default-centos-69: warning: /var/tmp/rpm-tmp.KOs7Wn: Header V3 RSA/SHA256 Signature, key ID 0608b895: NOKEY
+I, [2019-02-06T17:40:48.461768 #21529]  INFO -- default-centos-69: Preparing...                                                            (100%)#                                           (100%)##                                          (100%)###                                         (100%)####                                        (100%)#####                                       (100%)######                                      (100%)#######                                     (100%)########                                    (100%)#########                                   (100%)##########                                  (100%)###########                                 (100%)############                                (100%)#############                               (100%)##############                              (100%)###############                             (100%)################                            (100%)#################                           (100%)##################                          (100%)###################                         (100%)####################                        (100%)#####################                       (100%)######################                      (100%)#######################                     (100%)########################                    (100%)#########################                   (100%)##########################                  (100%)###########################                 (100%)############################                (100%)#############################               (100%)##############################              (100%)###############################             (100%)################################            (100%)#################################           (100%)##################################          (100%)###################################         (100%)####################################        (100%)#####################################       (100%)######################################      (100%)#######################################     (100%)########################################    (100%)#########################################   (100%)##########################################  (100%)########################################### (100%)########################################### [100%]
+I, [2019-02-06T17:40:48.468879 #21529]  INFO -- default-centos-69:    1:epel-release                                                       (  8%)#                                           (  8%)##                                          (  8%)###                                         (  9%)####                                        ( 14%)#####                                       ( 14%)######                                      ( 19%)#######                                     ( 19%)########                                    ( 19%)#########                                   ( 99%)##########                                  ( 99%)###########                                 ( 99%)############                                ( 99%)#############                               ( 99%)##############                              ( 99%)###############                             ( 99%)################                            ( 99%)#################                           ( 99%)##################                          ( 99%)###################                         ( 99%)####################                        ( 99%)#####################                       ( 99%)######################                      ( 99%)#######################                     ( 99%)########################                    ( 99%)#########################                   ( 99%)##########################                  ( 99%)###########################                 ( 99%)############################                ( 99%)#############################               ( 99%)##############################              ( 99%)###############################             ( 99%)################################            ( 99%)#################################           ( 99%)##################################          ( 99%)###################################         ( 99%)####################################        ( 99%)#####################################       ( 99%)######################################      ( 99%)#######################################     ( 99%)########################################    ( 99%)#########################################   ( 99%)##########################################  ( 99%)########################################### ( 99%)########################################### [100%]
+I, [2019-02-06T17:40:48.613018 #21529]  INFO -- default-centos-69: Failed to set locale, defaulting to C
+I, [2019-02-06T17:40:48.621541 #21529]  INFO -- default-centos-69: Loaded plugins: fastestmirror, ovl
+I, [2019-02-06T17:40:48.680382 #21529]  INFO -- default-centos-69: Loading mirror speeds from cached hostfile
+I, [2019-02-06T17:40:49.151124 #21529]  INFO -- default-centos-69: epel/metalink                                            |  17 kB     00:00     
+I, [2019-02-06T17:40:50.704037 #21529]  INFO -- default-centos-69:  * base: mirrors.cat.pdx.edu
+I, [2019-02-06T17:40:50.704890 #21529]  INFO -- default-centos-69:  * epel: mirrors.cat.pdx.edu
+I, [2019-02-06T17:40:50.705453 #21529]  INFO -- default-centos-69:  * extras: mirrors.cat.pdx.edu
+I, [2019-02-06T17:40:50.706003 #21529]  INFO -- default-centos-69:  * updates: mirrors.cat.pdx.edu
+I, [2019-02-06T17:40:50.731093 #21529]  INFO -- default-centos-69: base                                                     | 3.7 kB     00:00     
+I, [2019-02-06T17:40:51.024339 #21529]  INFO -- default-centos-69: base/group_gz                                            | 242 kB     00:00     
+I, [2019-02-06T17:40:51.587672 #21529]  INFO -- default-centos-69: base/filelists_db      (30%) 40% [====-       ]  0.0 B/s | 2.6 MB     --:-- ETA base/filelists_db                                        | 6.4 MB     00:00     
+I, [2019-02-06T17:40:51.779373 #21529]  INFO -- default-centos-69: base/other_db                                            | 2.8 MB     00:00     
+I, [2019-02-06T17:40:53.797293 #21529]  INFO -- default-centos-69: epel                                                     | 4.7 kB     00:00     
+I, [2019-02-06T17:40:53.830060 #21529]  INFO -- default-centos-69: epel/group_gz                                            |  71 kB     00:00     
+I, [2019-02-06T17:40:54.479695 #21529]  INFO -- default-centos-69: epel/filelists_db      (25%) 57% [======-     ]  0.0 B/s | 4.6 MB     --:-- ETA epel/filelists_db                                        | 7.9 MB     00:00     
+I, [2019-02-06T17:40:54.530494 #21529]  INFO -- default-centos-69: epel/updateinfo                                          | 775 kB     00:00     
+I, [2019-02-06T17:40:54.630176 #21529]  INFO -- default-centos-69: epel/prestodelta                                         |  505 B     00:00     
+I, [2019-02-06T17:40:55.249055 #21529]  INFO -- default-centos-69: epel/primary_db        (66%) 51% [======      ]  0.0 B/s | 3.1 MB     --:-- ETA epel/primary_db                                          | 6.0 MB     00:00     
+I, [2019-02-06T17:40:55.413012 #21529]  INFO -- default-centos-69: epel/other_db                                            | 3.0 MB     00:00     
+I, [2019-02-06T17:40:58.584393 #21529]  INFO -- default-centos-69: extras                                                   | 3.4 kB     00:00     
+I, [2019-02-06T17:40:58.603171 #21529]  INFO -- default-centos-69: extras/filelists_db                                      |  24 kB     00:00     
+I, [2019-02-06T17:40:58.619827 #21529]  INFO -- default-centos-69: extras/prestodelta                                       | 1.1 kB     00:00     
+I, [2019-02-06T17:40:58.642766 #21529]  INFO -- default-centos-69: extras/other_db                                          |  28 kB     00:00     
+I, [2019-02-06T17:40:58.670048 #21529]  INFO -- default-centos-69: updates                                                  | 3.4 kB     00:00     
+I, [2019-02-06T17:40:58.887394 #21529]  INFO -- default-centos-69: updates/filelists_db                                     | 1.9 MB     00:00     
+I, [2019-02-06T17:40:58.926125 #21529]  INFO -- default-centos-69: updates/prestodelta                                      | 104 kB     00:00     
+I, [2019-02-06T17:41:01.157047 #21529]  INFO -- default-centos-69: updates/other_db       (17%) 13% [=-          ]  0.0 B/s | 5.7 MB     --:-- ETA updates/other_db       (32%) 29% [===-        ]  11 MB/s |  12 MB     00:02 ETA updates/other_db       (49%) 46% [=====-      ]  12 MB/s |  20 MB     00:01 ETA updates/other_db       (63%) 62% [=======     ]  12 MB/s |  26 MB     00:01 ETA updates/other_db       (79%) 78% [=========   ]  13 MB/s |  33 MB     00:00 ETA updates/other_db       (94%) 94% [=========== ]  13 MB/s |  39 MB     00:00 ETA updates/other_db                                         |  42 MB     00:02     
+I, [2019-02-06T17:41:11.636576 #21529]  INFO -- default-centos-69: Metadata Cache Created
+I, [2019-02-06T17:41:11.766325 #21529]  INFO -- default-centos-69: Failed to set locale, defaulting to C
+I, [2019-02-06T17:41:11.776256 #21529]  INFO -- default-centos-69: Loaded plugins: fastestmirror, ovl
+I, [2019-02-06T17:41:11.780620 #21529]  INFO -- default-centos-69: Setting up Install Process
+I, [2019-02-06T17:41:11.830003 #21529]  INFO -- default-centos-69: Loading mirror speeds from cached hostfile
+I, [2019-02-06T17:41:15.006483 #21529]  INFO -- default-centos-69:  * base: mirrors.cat.pdx.edu
+I, [2019-02-06T17:41:15.007408 #21529]  INFO -- default-centos-69:  * epel: mirrors.cat.pdx.edu
+I, [2019-02-06T17:41:15.008029 #21529]  INFO -- default-centos-69:  * extras: mirrors.cat.pdx.edu
+I, [2019-02-06T17:41:15.008600 #21529]  INFO -- default-centos-69:  * updates: mirrors.cat.pdx.edu
+I, [2019-02-06T17:41:15.433692 #21529]  INFO -- default-centos-69: Resolving Dependencies
+I, [2019-02-06T17:41:15.435057 #21529]  INFO -- default-centos-69: --> Running transaction check
+I, [2019-02-06T17:41:15.435528 #21529]  INFO -- default-centos-69: ---> Package ansible.noarch 0:2.6.8-1.el6 will be installed
+I, [2019-02-06T17:41:15.459875 #21529]  INFO -- default-centos-69: --> Processing Dependency: PyYAML for package: ansible-2.6.8-1.el6.noarch
+I, [2019-02-06T17:41:15.754974 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-crypto for package: ansible-2.6.8-1.el6.noarch
+I, [2019-02-06T17:41:15.757427 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-crypto2.6 for package: ansible-2.6.8-1.el6.noarch
+I, [2019-02-06T17:41:15.759152 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-httplib2 for package: ansible-2.6.8-1.el6.noarch
+I, [2019-02-06T17:41:15.760408 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-jinja2-26 for package: ansible-2.6.8-1.el6.noarch
+I, [2019-02-06T17:41:15.761574 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-keyczar for package: ansible-2.6.8-1.el6.noarch
+I, [2019-02-06T17:41:15.762799 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-paramiko for package: ansible-2.6.8-1.el6.noarch
+I, [2019-02-06T17:41:15.766400 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-setuptools for package: ansible-2.6.8-1.el6.noarch
+I, [2019-02-06T17:41:15.767916 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-simplejson for package: ansible-2.6.8-1.el6.noarch
+I, [2019-02-06T17:41:15.769617 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-six for package: ansible-2.6.8-1.el6.noarch
+I, [2019-02-06T17:41:15.771102 #21529]  INFO -- default-centos-69: --> Processing Dependency: sshpass for package: ansible-2.6.8-1.el6.noarch
+I, [2019-02-06T17:41:15.772565 #21529]  INFO -- default-centos-69: ---> Package git.x86_64 0:1.7.1-9.el6_9 will be installed
+I, [2019-02-06T17:41:15.816407 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl-Git = 1.7.1-9.el6_9 for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.818129 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl >= 5.006 for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.824400 #21529]  INFO -- default-centos-69: --> Processing Dependency: rsync for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.826408 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(warnings) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.827215 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(vars) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.827682 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(strict) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.828150 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(lib) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.828616 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(Git) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.829713 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(Getopt::Long) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.830695 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(File::Spec) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.831388 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(File::Find) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.832059 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(File::Basename) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.832742 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(Exporter) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.833453 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(Error) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.835303 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(Cwd) for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.836371 #21529]  INFO -- default-centos-69: --> Processing Dependency: /usr/bin/perl for package: git-1.7.1-9.el6_9.x86_64
+I, [2019-02-06T17:41:15.837632 #21529]  INFO -- default-centos-69: ---> Package libselinux-python.x86_64 0:2.0.94-7.el6 will be installed
+I, [2019-02-06T17:41:15.843106 #21529]  INFO -- default-centos-69: --> Running transaction check
+I, [2019-02-06T17:41:15.843662 #21529]  INFO -- default-centos-69: ---> Package PyYAML.x86_64 0:3.10-3.1.el6 will be installed
+I, [2019-02-06T17:41:15.848787 #21529]  INFO -- default-centos-69: --> Processing Dependency: libyaml-0.so.2()(64bit) for package: PyYAML-3.10-3.1.el6.x86_64
+I, [2019-02-06T17:41:15.852518 #21529]  INFO -- default-centos-69: ---> Package perl.x86_64 4:5.10.1-144.el6 will be installed
+I, [2019-02-06T17:41:15.872333 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl-libs = 4:5.10.1-144.el6 for package: 4:perl-5.10.1-144.el6.x86_64
+I, [2019-02-06T17:41:15.876092 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl-libs for package: 4:perl-5.10.1-144.el6.x86_64
+I, [2019-02-06T17:41:15.876538 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(version) for package: 4:perl-5.10.1-144.el6.x86_64
+I, [2019-02-06T17:41:15.877955 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(Pod::Simple) for package: 4:perl-5.10.1-144.el6.x86_64
+I, [2019-02-06T17:41:15.879413 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(Module::Pluggable) for package: 4:perl-5.10.1-144.el6.x86_64
+I, [2019-02-06T17:41:15.880953 #21529]  INFO -- default-centos-69: --> Processing Dependency: libperl.so()(64bit) for package: 4:perl-5.10.1-144.el6.x86_64
+I, [2019-02-06T17:41:15.881716 #21529]  INFO -- default-centos-69: ---> Package perl-Error.noarch 1:0.17015-4.el6 will be installed
+I, [2019-02-06T17:41:15.885360 #21529]  INFO -- default-centos-69: ---> Package perl-Git.noarch 0:1.7.1-9.el6_9 will be installed
+I, [2019-02-06T17:41:15.889887 #21529]  INFO -- default-centos-69: ---> Package python-crypto.x86_64 0:2.0.1-22.el6 will be installed
+I, [2019-02-06T17:41:15.892351 #21529]  INFO -- default-centos-69: ---> Package python-crypto2.6.x86_64 0:2.6.1-2.el6 will be installed
+I, [2019-02-06T17:41:15.893595 #21529]  INFO -- default-centos-69: ---> Package python-httplib2.noarch 0:0.7.7-1.el6 will be installed
+I, [2019-02-06T17:41:15.894506 #21529]  INFO -- default-centos-69: ---> Package python-jinja2-26.noarch 0:2.6-3.el6 will be installed
+I, [2019-02-06T17:41:15.895867 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-babel >= 0.8 for package: python-jinja2-26-2.6-3.el6.noarch
+I, [2019-02-06T17:41:15.897310 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-markupsafe for package: python-jinja2-26-2.6-3.el6.noarch
+I, [2019-02-06T17:41:15.898495 #21529]  INFO -- default-centos-69: ---> Package python-keyczar.noarch 0:0.71c-1.el6 will be installed
+I, [2019-02-06T17:41:15.899841 #21529]  INFO -- default-centos-69: --> Processing Dependency: python-pyasn1 for package: python-keyczar-0.71c-1.el6.noarch
+I, [2019-02-06T17:41:15.901264 #21529]  INFO -- default-centos-69: ---> Package python-paramiko.noarch 0:1.7.5-5.el6_10 will be installed
+I, [2019-02-06T17:41:15.902224 #21529]  INFO -- default-centos-69: ---> Package python-setuptools.noarch 0:0.6.10-4.el6_9 will be installed
+I, [2019-02-06T17:41:15.904332 #21529]  INFO -- default-centos-69: ---> Package python-simplejson.x86_64 0:2.0.9-3.1.el6 will be installed
+I, [2019-02-06T17:41:15.905799 #21529]  INFO -- default-centos-69: ---> Package python-six.noarch 0:1.9.0-2.el6 will be installed
+I, [2019-02-06T17:41:15.906843 #21529]  INFO -- default-centos-69: ---> Package rsync.x86_64 0:3.0.6-12.el6 will be installed
+I, [2019-02-06T17:41:15.911996 #21529]  INFO -- default-centos-69: ---> Package sshpass.x86_64 0:1.06-1.el6 will be installed
+I, [2019-02-06T17:41:15.912954 #21529]  INFO -- default-centos-69: --> Running transaction check
+I, [2019-02-06T17:41:15.913432 #21529]  INFO -- default-centos-69: ---> Package libyaml.x86_64 0:0.1.3-4.el6_6 will be installed
+I, [2019-02-06T17:41:15.917648 #21529]  INFO -- default-centos-69: ---> Package perl-Module-Pluggable.x86_64 1:3.90-144.el6 will be installed
+I, [2019-02-06T17:41:15.920383 #21529]  INFO -- default-centos-69: ---> Package perl-Pod-Simple.x86_64 1:3.13-144.el6 will be installed
+I, [2019-02-06T17:41:15.930522 #21529]  INFO -- default-centos-69: --> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.13-144.el6.x86_64
+I, [2019-02-06T17:41:15.931787 #21529]  INFO -- default-centos-69: ---> Package perl-libs.x86_64 4:5.10.1-144.el6 will be installed
+I, [2019-02-06T17:41:15.937264 #21529]  INFO -- default-centos-69: ---> Package perl-version.x86_64 3:0.77-144.el6 will be installed
+I, [2019-02-06T17:41:15.938526 #21529]  INFO -- default-centos-69: ---> Package python-babel.noarch 0:0.9.4-5.1.el6 will be installed
+I, [2019-02-06T17:41:15.939415 #21529]  INFO -- default-centos-69: ---> Package python-markupsafe.x86_64 0:0.9.2-4.el6 will be installed
+I, [2019-02-06T17:41:15.940415 #21529]  INFO -- default-centos-69: ---> Package python-pyasn1.noarch 0:0.0.12a-1.el6 will be installed
+I, [2019-02-06T17:41:15.941447 #21529]  INFO -- default-centos-69: --> Running transaction check
+I, [2019-02-06T17:41:15.941883 #21529]  INFO -- default-centos-69: ---> Package perl-Pod-Escapes.x86_64 1:1.04-144.el6 will be installed
+I, [2019-02-06T17:41:16.049773 #21529]  INFO -- default-centos-69: --> Finished Dependency Resolution
+I, [2019-02-06T17:41:16.072434 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:16.072492 #21529]  INFO -- default-centos-69: Dependencies Resolved
+I, [2019-02-06T17:41:16.083318 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:16.083374 #21529]  INFO -- default-centos-69: ================================================================================
+I, [2019-02-06T17:41:16.083396 #21529]  INFO -- default-centos-69:  Package                   Arch       Version                 Repository   Size
+I, [2019-02-06T17:41:16.083417 #21529]  INFO -- default-centos-69: ================================================================================
+I, [2019-02-06T17:41:16.083433 #21529]  INFO -- default-centos-69: Installing:
+I, [2019-02-06T17:41:16.083448 #21529]  INFO -- default-centos-69:  ansible                   noarch     2.6.8-1.el6             epel         10 M
+I, [2019-02-06T17:41:16.083471 #21529]  INFO -- default-centos-69:  git                       x86_64     1.7.1-9.el6_9           base        4.6 M
+I, [2019-02-06T17:41:16.083489 #21529]  INFO -- default-centos-69:  libselinux-python         x86_64     2.0.94-7.el6            base        203 k
+I, [2019-02-06T17:41:16.083502 #21529]  INFO -- default-centos-69: Installing for dependencies:
+I, [2019-02-06T17:41:16.083516 #21529]  INFO -- default-centos-69:  PyYAML                    x86_64     3.10-3.1.el6            base        157 k
+I, [2019-02-06T17:41:16.083536 #21529]  INFO -- default-centos-69:  libyaml                   x86_64     0.1.3-4.el6_6           base         52 k
+I, [2019-02-06T17:41:16.083550 #21529]  INFO -- default-centos-69:  perl                      x86_64     4:5.10.1-144.el6        base         10 M
+I, [2019-02-06T17:41:16.083564 #21529]  INFO -- default-centos-69:  perl-Error                noarch     1:0.17015-4.el6         base         29 k
+I, [2019-02-06T17:41:16.083578 #21529]  INFO -- default-centos-69:  perl-Git                  noarch     1.7.1-9.el6_9           base         29 k
+I, [2019-02-06T17:41:16.083596 #21529]  INFO -- default-centos-69:  perl-Module-Pluggable     x86_64     1:3.90-144.el6          base         41 k
+I, [2019-02-06T17:41:16.084086 #21529]  INFO -- default-centos-69:  perl-Pod-Escapes          x86_64     1:1.04-144.el6          base         33 k
+I, [2019-02-06T17:41:16.084136 #21529]  INFO -- default-centos-69:  perl-Pod-Simple           x86_64     1:3.13-144.el6          base        213 k
+I, [2019-02-06T17:41:16.084156 #21529]  INFO -- default-centos-69:  perl-libs                 x86_64     4:5.10.1-144.el6        base        579 k
+I, [2019-02-06T17:41:16.084176 #21529]  INFO -- default-centos-69:  perl-version              x86_64     3:0.77-144.el6          base         52 k
+I, [2019-02-06T17:41:16.084192 #21529]  INFO -- default-centos-69:  python-babel              noarch     0.9.4-5.1.el6           base        1.4 M
+I, [2019-02-06T17:41:16.084205 #21529]  INFO -- default-centos-69:  python-crypto             x86_64     2.0.1-22.el6            base        159 k
+I, [2019-02-06T17:41:16.084222 #21529]  INFO -- default-centos-69:  python-crypto2.6          x86_64     2.6.1-2.el6             epel        513 k
+I, [2019-02-06T17:41:16.084236 #21529]  INFO -- default-centos-69:  python-httplib2           noarch     0.7.7-1.el6             epel         70 k
+I, [2019-02-06T17:41:16.084249 #21529]  INFO -- default-centos-69:  python-jinja2-26          noarch     2.6-3.el6               epel        527 k
+I, [2019-02-06T17:41:16.084263 #21529]  INFO -- default-centos-69:  python-keyczar            noarch     0.71c-1.el6             epel        219 k
+I, [2019-02-06T17:41:16.084280 #21529]  INFO -- default-centos-69:  python-markupsafe         x86_64     0.9.2-4.el6             base         22 k
+I, [2019-02-06T17:41:16.084308 #21529]  INFO -- default-centos-69:  python-paramiko           noarch     1.7.5-5.el6_10          updates     729 k
+I, [2019-02-06T17:41:16.084324 #21529]  INFO -- default-centos-69:  python-pyasn1             noarch     0.0.12a-1.el6           base         70 k
+I, [2019-02-06T17:41:16.084749 #21529]  INFO -- default-centos-69:  python-setuptools         noarch     0.6.10-4.el6_9          base        336 k
+I, [2019-02-06T17:41:16.085106 #21529]  INFO -- default-centos-69:  python-simplejson         x86_64     2.0.9-3.1.el6           base        126 k
+I, [2019-02-06T17:41:16.085459 #21529]  INFO -- default-centos-69:  python-six                noarch     1.9.0-2.el6             base         28 k
+I, [2019-02-06T17:41:16.085791 #21529]  INFO -- default-centos-69:  rsync                     x86_64     3.0.6-12.el6            base        335 k
+I, [2019-02-06T17:41:16.086135 #21529]  INFO -- default-centos-69:  sshpass                   x86_64     1.06-1.el6              epel         20 k
+I, [2019-02-06T17:41:16.086484 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:16.086813 #21529]  INFO -- default-centos-69: Transaction Summary
+I, [2019-02-06T17:41:16.087161 #21529]  INFO -- default-centos-69: ================================================================================
+I, [2019-02-06T17:41:16.087495 #21529]  INFO -- default-centos-69: Install      27 Package(s)
+I, [2019-02-06T17:41:16.087815 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:16.089195 #21529]  INFO -- default-centos-69: Total download size: 31 M
+I, [2019-02-06T17:41:16.089651 #21529]  INFO -- default-centos-69: Installed size: 126 M
+I, [2019-02-06T17:41:16.090127 #21529]  INFO -- default-centos-69: Downloading Packages:
+I, [2019-02-06T17:41:16.323273 #21529]  INFO -- default-centos-69: (1/27): PyYAML-3.10-3.1.el6.x86_64.rpm                   | 157 kB     00:00     
+I, [2019-02-06T17:41:16.946268 #21529]  INFO -- default-centos-69: (2/27): ansible-2.6.8- (24%) 71% [========-   ]  0.0 B/s | 7.4 MB     --:-- ETA (2/27): ansible-2.6.8-1.el6.noarch.rpm                   |  10 MB     00:00     
+I, [2019-02-06T17:41:17.433915 #21529]  INFO -- default-centos-69: (3/27): git-1.7.1-9.el (45%) 77% [=========   ]  0.0 B/s | 3.6 MB     --:-- ETA (3/27): git-1.7.1-9.el6_9.x86_64.rpm                     | 4.6 MB     00:00     
+I, [2019-02-06T17:41:17.588654 #21529]  INFO -- default-centos-69: (4/27): libselinux-python-2.0.94-7.el6.x86_64.rpm        | 203 kB     00:00     
+I, [2019-02-06T17:41:17.644069 #21529]  INFO -- default-centos-69: (5/27): libyaml-0.1.3-4.el6_6.x86_64.rpm                 |  52 kB     00:00     
+I, [2019-02-06T17:41:18.119601 #21529]  INFO -- default-centos-69: (6/27): perl-5.10.1-14 (73%) 72% [========-   ]  0.0 B/s | 7.4 MB     --:-- ETA (6/27): perl-5.10.1-144.el6.x86_64.rpm                   |  10 MB     00:00     
+I, [2019-02-06T17:41:18.157883 #21529]  INFO -- default-centos-69: (7/27): perl-Error-0.17015-4.el6.noarch.rpm              |  29 kB     00:00     
+I, [2019-02-06T17:41:18.190577 #21529]  INFO -- default-centos-69: (8/27): perl-Git-1.7.1-9.el6_9.noarch.rpm                |  29 kB     00:00     
+I, [2019-02-06T17:41:18.202066 #21529]  INFO -- default-centos-69: (9/27): perl-Module-Pluggable-3.90-144.el6.x86_64.rpm    |  41 kB     00:00     
+I, [2019-02-06T17:41:18.287692 #21529]  INFO -- default-centos-69: (10/27): perl-Pod-Escapes-1.04-144.el6.x86_64.rpm        |  33 kB     00:00     
+I, [2019-02-06T17:41:18.304360 #21529]  INFO -- default-centos-69: (11/27): perl-Pod-Simple-3.13-144.el6.x86_64.rpm         | 213 kB     00:00     
+I, [2019-02-06T17:41:18.336460 #21529]  INFO -- default-centos-69: (12/27): perl-libs-5.10.1-144.el6.x86_64.rpm             | 579 kB     00:00     
+I, [2019-02-06T17:41:18.347994 #21529]  INFO -- default-centos-69: (13/27): perl-version-0.77-144.el6.x86_64.rpm            |  52 kB     00:00     
+I, [2019-02-06T17:41:18.541050 #21529]  INFO -- default-centos-69: (14/27): python-babel-0.9.4-5.1.el6.noarch.rpm           | 1.4 MB     00:00     
+I, [2019-02-06T17:41:18.611563 #21529]  INFO -- default-centos-69: (15/27): python-crypto-2.0.1-22.el6.x86_64.rpm           | 159 kB     00:00     
+I, [2019-02-06T17:41:18.669916 #21529]  INFO -- default-centos-69: (16/27): python-crypto2.6-2.6.1-2.el6.x86_64.rpm         | 513 kB     00:00     
+I, [2019-02-06T17:41:18.684434 #21529]  INFO -- default-centos-69: (17/27): python-httplib2-0.7.7-1.el6.noarch.rpm          |  70 kB     00:00     
+I, [2019-02-06T17:41:18.743036 #21529]  INFO -- default-centos-69: (18/27): python-jinja2-26-2.6-3.el6.noarch.rpm           | 527 kB     00:00     
+I, [2019-02-06T17:41:18.766461 #21529]  INFO -- default-centos-69: (19/27): python-keyczar-0.71c-1.el6.noarch.rpm           | 219 kB     00:00     
+I, [2019-02-06T17:41:18.816392 #21529]  INFO -- default-centos-69: (20/27): python-markupsafe-0.9.2-4.el6.x86_64.rpm        |  22 kB     00:00     
+I, [2019-02-06T17:41:18.971635 #21529]  INFO -- default-centos-69: (21/27): python-paramiko-1.7.5-5.el6_10.noarch.rpm       | 729 kB     00:00     
+I, [2019-02-06T17:41:19.174342 #21529]  INFO -- default-centos-69: (22/27): python-pyasn1-0.0.12a-1.el6.noarch.rpm          |  70 kB     00:00     
+I, [2019-02-06T17:41:19.271402 #21529]  INFO -- default-centos-69: (23/27): python-setuptools-0.6.10-4.el6_9.noarch.rpm     | 336 kB     00:00     
+I, [2019-02-06T17:41:19.377064 #21529]  INFO -- default-centos-69: (24/27): python-simplejson-2.0.9-3.1.el6.x86_64.rpm      | 126 kB     00:00     
+I, [2019-02-06T17:41:19.448958 #21529]  INFO -- default-centos-69: (25/27): python-six-1.9.0-2.el6.noarch.rpm               |  28 kB     00:00     
+I, [2019-02-06T17:41:19.509345 #21529]  INFO -- default-centos-69: (26/27): rsync-3.0.6-12.el6.x86_64.rpm                   | 335 kB     00:00     
+I, [2019-02-06T17:41:19.535291 #21529]  INFO -- default-centos-69: (27/27): sshpass-1.06-1.el6.x86_64.rpm                   |  20 kB     00:00     
+I, [2019-02-06T17:41:19.535759 #21529]  INFO -- default-centos-69: --------------------------------------------------------------------------------
+I, [2019-02-06T17:41:19.536278 #21529]  INFO -- default-centos-69: Total                                           9.0 MB/s |  31 MB     00:03     
+I, [2019-02-06T17:41:19.539205 #21529]  INFO -- default-centos-69: warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID 0608b895: NOKEY
+I, [2019-02-06T17:41:19.539753 #21529]  INFO -- default-centos-69: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
+I, [2019-02-06T17:41:19.545037 #21529]  INFO -- default-centos-69: Importing GPG key 0x0608B895:
+I, [2019-02-06T17:41:19.545087 #21529]  INFO -- default-centos-69:  Userid : EPEL (6) <epel@fedoraproject.org>
+I, [2019-02-06T17:41:19.545109 #21529]  INFO -- default-centos-69:  Package: epel-release-6-8.noarch (installed)
+I, [2019-02-06T17:41:19.545123 #21529]  INFO -- default-centos-69:  From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-6
+I, [2019-02-06T17:41:19.585401 #21529]  INFO -- default-centos-69: Running rpm_check_debug
+I, [2019-02-06T17:41:19.628138 #21529]  INFO -- default-centos-69: Running Transaction Test
+I, [2019-02-06T17:41:19.754771 #21529]  INFO -- default-centos-69: Transaction Test Succeeded
+I, [2019-02-06T17:41:19.795858 #21529]  INFO -- default-centos-69: Running Transaction
+I, [2019-02-06T17:41:19.819528 #21529]  INFO -- default-centos-69: Warning: RPMDB altered outside of yum.
+I, [2019-02-06T17:41:20.068940 #21529]  INFO -- default-centos-69:   Installing : python-crypto-2.0.1-22.el6. [                            ]  1/27  Installing : python-crypto-2.0.1-22.el6. [#                           ]  1/27  Installing : python-crypto-2.0.1-22.el6. [##                          ]  1/27  Installing : python-crypto-2.0.1-22.el6. [###                         ]  1/27  Installing : python-crypto-2.0.1-22.el6. [#####                       ]  1/27  Installing : python-crypto-2.0.1-22.el6. [######                      ]  1/27  Installing : python-crypto-2.0.1-22.el6. [#######                     ]  1/27  Installing : python-crypto-2.0.1-22.el6. [########                    ]  1/27  Installing : python-crypto-2.0.1-22.el6. [#########                   ]  1/27  Installing : python-crypto-2.0.1-22.el6. [##########                  ]  1/27  Installing : python-crypto-2.0.1-22.el6. [###########                 ]  1/27  Installing : python-crypto-2.0.1-22.el6. [############                ]  1/27  Installing : python-crypto-2.0.1-22.el6. [#############               ]  1/27  Installing : python-crypto-2.0.1-22.el6. [##############              ]  1/27  Installing : python-crypto-2.0.1-22.el6. [###############             ]  1/27  Installing : python-crypto-2.0.1-22.el6. [################            ]  1/27  Installing : python-crypto-2.0.1-22.el6. [#################           ]  1/27  Installing : python-crypto-2.0.1-22.el6. [##################          ]  1/27  Installing : python-crypto-2.0.1-22.el6. [###################         ]  1/27  Installing : python-crypto-2.0.1-22.el6. [####################        ]  1/27  Installing : python-crypto-2.0.1-22.el6. [######################      ]  1/27  Installing : python-crypto-2.0.1-22.el6. [#######################     ]  1/27  Installing : python-crypto-2.0.1-22.el6. [########################    ]  1/27  Installing : python-crypto-2.0.1-22.el6. [##########################  ]  1/27  Installing : python-crypto-2.0.1-22.el6. [########################### ]  1/27  Installing : python-crypto-2.0.1-22.el6.x86_64                           1/27 
+I, [2019-02-06T17:41:20.317638 #21529]  INFO -- default-centos-69:   Installing : python-paramiko-1.7.5-5.el6 [                            ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [#                           ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [##                          ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [###                         ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [####                        ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [#####                       ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [######                      ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [#######                     ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [########                    ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [#########                   ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [###########                 ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [############                ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [#############               ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [##############              ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [###############             ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [################            ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [#################           ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [##################          ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [###################         ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [####################        ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [#####################       ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [######################      ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [#########################   ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [##########################  ]  2/27  Installing : python-paramiko-1.7.5-5.el6 [########################### ]  2/27  Installing : python-paramiko-1.7.5-5.el6_10.noarch                       2/27 
+I, [2019-02-06T17:41:20.362930 #21529]  INFO -- default-centos-69:   Installing : 1:perl-Pod-Escapes-1.04-144 [#####                       ]  3/27  Installing : 1:perl-Pod-Escapes-1.04-144 [########################### ]  3/27  Installing : 1:perl-Pod-Escapes-1.04-144.el6.x86_64                      3/27 
+I, [2019-02-06T17:41:20.470774 #21529]  INFO -- default-centos-69:   Installing : 4:perl-libs-5.10.1-144.el6. [                            ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [#                           ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [##                          ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [###                         ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [####                        ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [######                      ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [#######                     ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [########                    ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [#########                   ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [##########                  ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [############                ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [#############               ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [##############              ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [###############             ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [#################           ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [##################          ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [###################         ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [####################        ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [######################      ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [#######################     ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [########################    ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [#########################   ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6. [########################### ]  4/27  Installing : 4:perl-libs-5.10.1-144.el6.x86_64                           4/27 
+I, [2019-02-06T17:41:20.790198 #21529]  INFO -- default-centos-69:   Installing : 1:perl-Pod-Simple-3.13-144. [                            ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [#                           ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [##                          ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [###                         ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [####                        ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [#####                       ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [########                    ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [############                ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [#############               ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [###############             ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [#################           ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [##################          ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [###################         ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [####################        ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [#####################       ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [#######################     ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [#########################   ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [##########################  ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144. [########################### ]  5/27  Installing : 1:perl-Pod-Simple-3.13-144.el6.x86_64                       5/27 
+I, [2019-02-06T17:41:20.826376 #21529]  INFO -- default-centos-69:   Installing : 1:perl-Module-Pluggable-3.9 [#                           ]  6/27  Installing : 1:perl-Module-Pluggable-3.9 [#####                       ]  6/27  Installing : 1:perl-Module-Pluggable-3.9 [########                    ]  6/27  Installing : 1:perl-Module-Pluggable-3.9 [##########                  ]  6/27  Installing : 1:perl-Module-Pluggable-3.9 [##################          ]  6/27  Installing : 1:perl-Module-Pluggable-3.9 [########################### ]  6/27  Installing : 1:perl-Module-Pluggable-3.90-144.el6.x86_64                 6/27 
+I, [2019-02-06T17:41:20.854266 #21529]  INFO -- default-centos-69:   Installing : 3:perl-version-0.77-144.el6 [###                         ]  7/27  Installing : 3:perl-version-0.77-144.el6 [########                    ]  7/27  Installing : 3:perl-version-0.77-144.el6 [#########                   ]  7/27  Installing : 3:perl-version-0.77-144.el6 [###############             ]  7/27  Installing : 3:perl-version-0.77-144.el6 [########################### ]  7/27  Installing : 3:perl-version-0.77-144.el6.x86_64                          7/27 
+I, [2019-02-06T17:41:22.708136 #21529]  INFO -- default-centos-69:   Installing : 4:perl-5.10.1-144.el6.x86_6 [                            ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [#                           ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [##                          ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [###                         ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [####                        ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [#####                       ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [######                      ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [#######                     ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [########                    ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [#########                   ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [##########                  ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [###########                 ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [############                ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [#############               ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [##############              ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [###############             ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [################            ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [#################           ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [##################          ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [###################         ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [####################        ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [#####################       ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [######################      ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [#######################     ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [########################    ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [#########################   ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [##########################  ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_6 [########################### ]  8/27  Installing : 4:perl-5.10.1-144.el6.x86_64                                8/27 
+I, [2019-02-06T17:41:22.809344 #21529]  INFO -- default-centos-69:   Installing : 1:perl-Error-0.17015-4.el6. [                            ]  9/27  Installing : 1:perl-Error-0.17015-4.el6. [####                        ]  9/27  Installing : 1:perl-Error-0.17015-4.el6. [######                      ]  9/27  Installing : 1:perl-Error-0.17015-4.el6. [#######                     ]  9/27  Installing : 1:perl-Error-0.17015-4.el6. [########                    ]  9/27  Installing : 1:perl-Error-0.17015-4.el6. [############                ]  9/27  Installing : 1:perl-Error-0.17015-4.el6. [#############               ]  9/27  Installing : 1:perl-Error-0.17015-4.el6. [########################### ]  9/27  Installing : 1:perl-Error-0.17015-4.el6.noarch                           9/27 
+I, [2019-02-06T17:41:22.872865 #21529]  INFO -- default-centos-69:   Installing : rsync-3.0.6-12.el6.x86_64 [                              ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [##                            ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [#####                         ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [########                      ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [###########                   ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [#############                 ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [################              ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [#################             ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [##################            ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [########################      ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [#########################     ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [##########################    ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [###########################   ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64 [############################# ] 10/27  Installing : rsync-3.0.6-12.el6.x86_64                                  10/27 
+I, [2019-02-06T17:41:22.896066 #21529]  INFO -- default-centos-69:   Installing : perl-Git-1.7.1-9.el6_9.noar [########################### ] 11/27  Installing : perl-Git-1.7.1-9.el6_9.noarch                              11/27 
+I, [2019-02-06T17:41:23.661078 #21529]  INFO -- default-centos-69:   Installing : git-1.7.1-9.el6_9.x86_64 [                               ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [#                              ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [##                             ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [###                            ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [####                           ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [#####                          ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [######                         ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [#######                        ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [########                       ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [#########                      ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [##########                     ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [###########                    ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [############                   ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [#############                  ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [##############                 ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [###############                ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [################               ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [#################              ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [##################             ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [###################            ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [####################           ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [#####################          ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [######################         ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [#######################        ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [########################       ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [#########################      ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [##########################     ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [###########################    ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [############################   ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [#############################  ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64 [############################## ] 12/27  Installing : git-1.7.1-9.el6_9.x86_64                                   12/27 
+I, [2019-02-06T17:41:23.923165 #21529]  INFO -- default-centos-69:   Installing : python-crypto2.6-2.6.1-2.el [                            ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [#                           ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [##                          ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [###                         ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [####                        ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [#####                       ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [######                      ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [#######                     ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [########                    ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [#########                   ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [##########                  ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [###########                 ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [############                ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [#############               ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [##############              ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [###############             ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [################            ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [#################           ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [##################          ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [###################         ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [####################        ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [#####################       ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [######################      ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [#######################     ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [########################    ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [#########################   ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [##########################  ] 13/27  Installing : python-crypto2.6-2.6.1-2.el [########################### ] 13/27  Installing : python-crypto2.6-2.6.1-2.el6.x86_64                        13/27 
+I, [2019-02-06T17:41:24.047869 #21529]  INFO -- default-centos-69:   Installing : python-setuptools-0.6.10-4. [                            ] 14/27  Installing : python-setuptools-0.6.10-4. [#                           ] 14/27  Installing : python-setuptools-0.6.10-4. [##                          ] 14/27  Installing : python-setuptools-0.6.10-4. [###                         ] 14/27  Installing : python-setuptools-0.6.10-4. [####                        ] 14/27  Installing : python-setuptools-0.6.10-4. [#####                       ] 14/27  Installing : python-setuptools-0.6.10-4. [######                      ] 14/27  Installing : python-setuptools-0.6.10-4. [#######                     ] 14/27  Installing : python-setuptools-0.6.10-4. [########                    ] 14/27  Installing : python-setuptools-0.6.10-4. [#########                   ] 14/27  Installing : python-setuptools-0.6.10-4. [##########                  ] 14/27  Installing : python-setuptools-0.6.10-4. [############                ] 14/27  Installing : python-setuptools-0.6.10-4. [###############             ] 14/27  Installing : python-setuptools-0.6.10-4. [#################           ] 14/27  Installing : python-setuptools-0.6.10-4. [###################         ] 14/27  Installing : python-setuptools-0.6.10-4. [#####################       ] 14/27  Installing : python-setuptools-0.6.10-4. [######################      ] 14/27  Installing : python-setuptools-0.6.10-4. [#######################     ] 14/27  Installing : python-setuptools-0.6.10-4. [########################    ] 14/27  Installing : python-setuptools-0.6.10-4. [#########################   ] 14/27  Installing : python-setuptools-0.6.10-4. [##########################  ] 14/27  Installing : python-setuptools-0.6.10-4. [########################### ] 14/27  Installing : python-setuptools-0.6.10-4.el6_9.noarch                    14/27 
+I, [2019-02-06T17:41:24.445077 #21529]  INFO -- default-centos-69:   Installing : python-babel-0.9.4-5.1.el6. [                            ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [#                           ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [##                          ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [###                         ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [####                        ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [#####                       ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [######                      ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [#######                     ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [########                    ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [#########                   ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [##########                  ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [###########                 ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [############                ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [#############               ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [##############              ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [###############             ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [################            ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [#################           ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [##################          ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [###################         ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [####################        ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [#####################       ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [######################      ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [#######################     ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [########################    ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [#########################   ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [##########################  ] 15/27  Installing : python-babel-0.9.4-5.1.el6. [########################### ] 15/27  Installing : python-babel-0.9.4-5.1.el6.noarch                          15/27 
+I, [2019-02-06T17:41:24.527417 #21529]  INFO -- default-centos-69:   Installing : python-simplejson-2.0.9-3.1 [                            ] 16/27  Installing : python-simplejson-2.0.9-3.1 [##                          ] 16/27  Installing : python-simplejson-2.0.9-3.1 [###                         ] 16/27  Installing : python-simplejson-2.0.9-3.1 [####                        ] 16/27  Installing : python-simplejson-2.0.9-3.1 [#####                       ] 16/27  Installing : python-simplejson-2.0.9-3.1 [######                      ] 16/27  Installing : python-simplejson-2.0.9-3.1 [#######                     ] 16/27  Installing : python-simplejson-2.0.9-3.1 [########                    ] 16/27  Installing : python-simplejson-2.0.9-3.1 [#############               ] 16/27  Installing : python-simplejson-2.0.9-3.1 [#################           ] 16/27  Installing : python-simplejson-2.0.9-3.1 [##################          ] 16/27  Installing : python-simplejson-2.0.9-3.1 [###################         ] 16/27  Installing : python-simplejson-2.0.9-3.1 [######################      ] 16/27  Installing : python-simplejson-2.0.9-3.1 [#######################     ] 16/27  Installing : python-simplejson-2.0.9-3.1 [########################    ] 16/27  Installing : python-simplejson-2.0.9-3.1 [#########################   ] 16/27  Installing : python-simplejson-2.0.9-3.1 [##########################  ] 16/27  Installing : python-simplejson-2.0.9-3.1 [########################### ] 16/27  Installing : python-simplejson-2.0.9-3.1.el6.x86_64                     16/27 
+I, [2019-02-06T17:41:24.565972 #21529]  INFO -- default-centos-69:   Installing : python-markupsafe-0.9.2-4.e [                            ] 17/27  Installing : python-markupsafe-0.9.2-4.e [#                           ] 17/27  Installing : python-markupsafe-0.9.2-4.e [#####                       ] 17/27  Installing : python-markupsafe-0.9.2-4.e [########                    ] 17/27  Installing : python-markupsafe-0.9.2-4.e [############                ] 17/27  Installing : python-markupsafe-0.9.2-4.e [#############               ] 17/27  Installing : python-markupsafe-0.9.2-4.e [###############             ] 17/27  Installing : python-markupsafe-0.9.2-4.e [################            ] 17/27  Installing : python-markupsafe-0.9.2-4.e [#################           ] 17/27  Installing : python-markupsafe-0.9.2-4.e [##################          ] 17/27  Installing : python-markupsafe-0.9.2-4.e [###################         ] 17/27  Installing : python-markupsafe-0.9.2-4.e [######################      ] 17/27  Installing : python-markupsafe-0.9.2-4.e [########################### ] 17/27  Installing : python-markupsafe-0.9.2-4.el6.x86_64                       17/27 
+I, [2019-02-06T17:41:24.744070 #21529]  INFO -- default-centos-69:   Installing : python-jinja2-26-2.6-3.el6. [                            ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [#                           ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [##                          ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [###                         ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [####                        ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [#####                       ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [######                      ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [#######                     ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [########                    ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [#########                   ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [##########                  ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [###########                 ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [############                ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [#############               ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [##############              ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [###############             ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [################            ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [#################           ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [##################          ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [###################         ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [####################        ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [#####################       ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [######################      ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [########################    ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [#########################   ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [##########################  ] 18/27  Installing : python-jinja2-26-2.6-3.el6. [########################### ] 18/27  Installing : python-jinja2-26-2.6-3.el6.noarch                          18/27 
+I, [2019-02-06T17:41:24.818010 #21529]  INFO -- default-centos-69:   Installing : python-pyasn1-0.0.12a-1.el6 [                            ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [##                          ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [###                         ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [#####                       ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [######                      ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [#######                     ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [########                    ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [#########                   ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [##########                  ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [###########                 ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [#############               ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [###############             ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [################            ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [#################           ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [##################          ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [###################         ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [####################        ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [######################      ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [#######################     ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [########################    ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [#########################   ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [##########################  ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6 [########################### ] 19/27  Installing : python-pyasn1-0.0.12a-1.el6.noarch                         19/27 
+I, [2019-02-06T17:41:24.879055 #21529]  INFO -- default-centos-69:   Installing : python-keyczar-0.71c-1.el6. [                            ] 20/27  Installing : python-keyczar-0.71c-1.el6. [#                           ] 20/27  Installing : python-keyczar-0.71c-1.el6. [###                         ] 20/27  Installing : python-keyczar-0.71c-1.el6. [####                        ] 20/27  Installing : python-keyczar-0.71c-1.el6. [#####                       ] 20/27  Installing : python-keyczar-0.71c-1.el6. [#######                     ] 20/27  Installing : python-keyczar-0.71c-1.el6. [#########                   ] 20/27  Installing : python-keyczar-0.71c-1.el6. [############                ] 20/27  Installing : python-keyczar-0.71c-1.el6. [#############               ] 20/27  Installing : python-keyczar-0.71c-1.el6. [###############             ] 20/27  Installing : python-keyczar-0.71c-1.el6. [#################           ] 20/27  Installing : python-keyczar-0.71c-1.el6. [#########################   ] 20/27  Installing : python-keyczar-0.71c-1.el6. [##########################  ] 20/27  Installing : python-keyczar-0.71c-1.el6. [########################### ] 20/27  Installing : python-keyczar-0.71c-1.el6.noarch                          20/27 
+I, [2019-02-06T17:41:24.913657 #21529]  INFO -- default-centos-69:   Installing : python-httplib2-0.7.7-1.el6 [                            ] 21/27  Installing : python-httplib2-0.7.7-1.el6 [########                    ] 21/27  Installing : python-httplib2-0.7.7-1.el6 [#########                   ] 21/27  Installing : python-httplib2-0.7.7-1.el6 [##############              ] 21/27  Installing : python-httplib2-0.7.7-1.el6 [#################           ] 21/27  Installing : python-httplib2-0.7.7-1.el6 [###################         ] 21/27  Installing : python-httplib2-0.7.7-1.el6 [####################        ] 21/27  Installing : python-httplib2-0.7.7-1.el6 [########################### ] 21/27  Installing : python-httplib2-0.7.7-1.el6.noarch                         21/27 
+I, [2019-02-06T17:41:24.937339 #21529]  INFO -- default-centos-69:   Installing : libyaml-0.1.3-4.el6_6.x86_6 [                            ] 22/27  Installing : libyaml-0.1.3-4.el6_6.x86_6 [##############              ] 22/27  Installing : libyaml-0.1.3-4.el6_6.x86_6 [########################### ] 22/27  Installing : libyaml-0.1.3-4.el6_6.x86_64                               22/27 
+I, [2019-02-06T17:41:25.001161 #21529]  INFO -- default-centos-69:   Installing : PyYAML-3.10-3.1.el6.x86_64 [                             ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [##                           ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [#####                        ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [#######                      ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [########                     ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [#########                    ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [###########                  ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [############                 ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [#############                ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [##############               ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [###############              ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [##################           ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [###################          ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [#####################        ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [######################       ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [#######################      ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [########################     ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [#########################    ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [##########################   ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [###########################  ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64 [############################ ] 23/27  Installing : PyYAML-3.10-3.1.el6.x86_64                                 23/27 
+I, [2019-02-06T17:41:25.028988 #21529]  INFO -- default-centos-69:   Installing : sshpass-1.06-1.el6.x86_64 [##########                    ] 24/27  Installing : sshpass-1.06-1.el6.x86_64 [#########################     ] 24/27  Installing : sshpass-1.06-1.el6.x86_64 [###########################   ] 24/27  Installing : sshpass-1.06-1.el6.x86_64 [############################# ] 24/27  Installing : sshpass-1.06-1.el6.x86_64                                  24/27 
+I, [2019-02-06T17:41:25.050627 #21529]  INFO -- default-centos-69:   Installing : python-six-1.9.0-2.el6.noar [                            ] 25/27  Installing : python-six-1.9.0-2.el6.noar [########                    ] 25/27  Installing : python-six-1.9.0-2.el6.noar [#########                   ] 25/27  Installing : python-six-1.9.0-2.el6.noar [###################         ] 25/27  Installing : python-six-1.9.0-2.el6.noar [########################### ] 25/27  Installing : python-six-1.9.0-2.el6.noarch                              25/27 
+I, [2019-02-06T17:41:29.043902 #21529]  INFO -- default-centos-69:   Installing : ansible-2.6.8-1.el6.noarch [                             ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [#                            ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [##                           ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [###                          ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [####                         ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [#####                        ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [######                       ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [#######                      ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [########                     ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [#########                    ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [##########                   ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [###########                  ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [############                 ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [#############                ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [##############               ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [###############              ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [################             ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [#################            ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [##################           ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [###################          ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [####################         ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [#####################        ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [######################       ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [#######################      ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [########################     ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [#########################    ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [##########################   ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [###########################  ] 26/27  Installing : ansible-2.6.8-1.el6.noarch [############################ ] 26/27  Installing : ansible-2.6.8-1.el6.noarch                                 26/27 
+I, [2019-02-06T17:41:29.301571 #21529]  INFO -- default-centos-69:   Installing : libselinux-python-2.0.94-7. [                            ] 27/27  Installing : libselinux-python-2.0.94-7. [##                          ] 27/27  Installing : libselinux-python-2.0.94-7. [####                        ] 27/27  Installing : libselinux-python-2.0.94-7. [#######                     ] 27/27  Installing : libselinux-python-2.0.94-7. [#########                   ] 27/27  Installing : libselinux-python-2.0.94-7. [############                ] 27/27  Installing : libselinux-python-2.0.94-7. [###############             ] 27/27  Installing : libselinux-python-2.0.94-7. [##################          ] 27/27  Installing : libselinux-python-2.0.94-7. [#####################       ] 27/27  Installing : libselinux-python-2.0.94-7. [#######################     ] 27/27  Installing : libselinux-python-2.0.94-7. [##########################  ] 27/27  Installing : libselinux-python-2.0.94-7. [########################### ] 27/27  Installing : libselinux-python-2.0.94-7.el6.x86_64                      27/27 
+I, [2019-02-06T17:41:29.336020 #21529]  INFO -- default-centos-69:   Verifying  : 3:perl-version-0.77-144.el6.x86_64                          1/27 
+I, [2019-02-06T17:41:29.345048 #21529]  INFO -- default-centos-69:   Verifying  : python-six-1.9.0-2.el6.noarch                               2/27 
+I, [2019-02-06T17:41:29.351530 #21529]  INFO -- default-centos-69:   Verifying  : sshpass-1.06-1.el6.x86_64                                   3/27 
+I, [2019-02-06T17:41:29.357087 #21529]  INFO -- default-centos-69:   Verifying  : python-keyczar-0.71c-1.el6.noarch                           4/27 
+I, [2019-02-06T17:41:29.363671 #21529]  INFO -- default-centos-69:   Verifying  : libyaml-0.1.3-4.el6_6.x86_64                                5/27 
+I, [2019-02-06T17:41:29.369937 #21529]  INFO -- default-centos-69:   Verifying  : python-httplib2-0.7.7-1.el6.noarch                          6/27 
+I, [2019-02-06T17:41:29.375183 #21529]  INFO -- default-centos-69:   Verifying  : python-pyasn1-0.0.12a-1.el6.noarch                          7/27 
+I, [2019-02-06T17:41:29.382044 #21529]  INFO -- default-centos-69:   Verifying  : python-crypto-2.0.1-22.el6.x86_64                           8/27 
+I, [2019-02-06T17:41:29.388584 #21529]  INFO -- default-centos-69:   Verifying  : python-paramiko-1.7.5-5.el6_10.noarch                       9/27 
+I, [2019-02-06T17:41:29.394934 #21529]  INFO -- default-centos-69:   Verifying  : python-markupsafe-0.9.2-4.el6.x86_64                       10/27 
+I, [2019-02-06T17:41:29.401790 #21529]  INFO -- default-centos-69:   Verifying  : PyYAML-3.10-3.1.el6.x86_64                                 11/27 
+I, [2019-02-06T17:41:29.406877 #21529]  INFO -- default-centos-69:   Verifying  : 4:perl-libs-5.10.1-144.el6.x86_64                          12/27 
+I, [2019-02-06T17:41:29.413547 #21529]  INFO -- default-centos-69:   Verifying  : 4:perl-5.10.1-144.el6.x86_64                               13/27 
+I, [2019-02-06T17:41:29.420749 #21529]  INFO -- default-centos-69:   Verifying  : perl-Git-1.7.1-9.el6_9.noarch                              14/27 
+I, [2019-02-06T17:41:29.425900 #21529]  INFO -- default-centos-69:   Verifying  : python-simplejson-2.0.9-3.1.el6.x86_64                     15/27 
+I, [2019-02-06T17:41:29.432461 #21529]  INFO -- default-centos-69:   Verifying  : ansible-2.6.8-1.el6.noarch                                 16/27 
+I, [2019-02-06T17:41:29.440392 #21529]  INFO -- default-centos-69:   Verifying  : 1:perl-Pod-Simple-3.13-144.el6.x86_64                      17/27 
+I, [2019-02-06T17:41:29.447194 #21529]  INFO -- default-centos-69:   Verifying  : 1:perl-Pod-Escapes-1.04-144.el6.x86_64                     18/27 
+I, [2019-02-06T17:41:29.453539 #21529]  INFO -- default-centos-69:   Verifying  : python-babel-0.9.4-5.1.el6.noarch                          19/27 
+I, [2019-02-06T17:41:29.458158 #21529]  INFO -- default-centos-69:   Verifying  : 1:perl-Error-0.17015-4.el6.noarch                          20/27 
+I, [2019-02-06T17:41:29.464394 #21529]  INFO -- default-centos-69:   Verifying  : python-setuptools-0.6.10-4.el6_9.noarch                    21/27 
+I, [2019-02-06T17:41:29.470703 #21529]  INFO -- default-centos-69:   Verifying  : python-jinja2-26-2.6-3.el6.noarch                          22/27 
+I, [2019-02-06T17:41:29.477451 #21529]  INFO -- default-centos-69:   Verifying  : python-crypto2.6-2.6.1-2.el6.x86_64                        23/27 
+I, [2019-02-06T17:41:29.483725 #21529]  INFO -- default-centos-69:   Verifying  : 1:perl-Module-Pluggable-3.90-144.el6.x86_64                24/27 
+I, [2019-02-06T17:41:29.488762 #21529]  INFO -- default-centos-69:   Verifying  : libselinux-python-2.0.94-7.el6.x86_64                      25/27 
+I, [2019-02-06T17:41:29.495957 #21529]  INFO -- default-centos-69:   Verifying  : rsync-3.0.6-12.el6.x86_64                                  26/27 
+I, [2019-02-06T17:41:29.502430 #21529]  INFO -- default-centos-69:   Verifying  : git-1.7.1-9.el6_9.x86_64                                   27/27 
+I, [2019-02-06T17:41:29.536604 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:29.536661 #21529]  INFO -- default-centos-69: Installed:
+I, [2019-02-06T17:41:29.536683 #21529]  INFO -- default-centos-69:   ansible.noarch 0:2.6.8-1.el6                  git.x86_64 0:1.7.1-9.el6_9      
+I, [2019-02-06T17:41:29.536705 #21529]  INFO -- default-centos-69:   libselinux-python.x86_64 0:2.0.94-7.el6      
+I, [2019-02-06T17:41:29.536720 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:29.536733 #21529]  INFO -- default-centos-69: Dependency Installed:
+I, [2019-02-06T17:41:29.536761 #21529]  INFO -- default-centos-69:   PyYAML.x86_64 0:3.10-3.1.el6                                                  
+I, [2019-02-06T17:41:29.536778 #21529]  INFO -- default-centos-69:   libyaml.x86_64 0:0.1.3-4.el6_6                                                
+I, [2019-02-06T17:41:29.536799 #21529]  INFO -- default-centos-69:   perl.x86_64 4:5.10.1-144.el6                                                  
+I, [2019-02-06T17:41:29.536819 #21529]  INFO -- default-centos-69:   perl-Error.noarch 1:0.17015-4.el6                                             
+I, [2019-02-06T17:41:29.536834 #21529]  INFO -- default-centos-69:   perl-Git.noarch 0:1.7.1-9.el6_9                                               
+I, [2019-02-06T17:41:29.536848 #21529]  INFO -- default-centos-69:   perl-Module-Pluggable.x86_64 1:3.90-144.el6                                   
+I, [2019-02-06T17:41:29.536867 #21529]  INFO -- default-centos-69:   perl-Pod-Escapes.x86_64 1:1.04-144.el6                                        
+I, [2019-02-06T17:41:29.536882 #21529]  INFO -- default-centos-69:   perl-Pod-Simple.x86_64 1:3.13-144.el6                                         
+I, [2019-02-06T17:41:29.536896 #21529]  INFO -- default-centos-69:   perl-libs.x86_64 4:5.10.1-144.el6                                             
+I, [2019-02-06T17:41:29.536910 #21529]  INFO -- default-centos-69:   perl-version.x86_64 3:0.77-144.el6                                            
+I, [2019-02-06T17:41:29.537462 #21529]  INFO -- default-centos-69:   python-babel.noarch 0:0.9.4-5.1.el6                                           
+I, [2019-02-06T17:41:29.537496 #21529]  INFO -- default-centos-69:   python-crypto.x86_64 0:2.0.1-22.el6                                           
+I, [2019-02-06T17:41:29.537515 #21529]  INFO -- default-centos-69:   python-crypto2.6.x86_64 0:2.6.1-2.el6                                         
+I, [2019-02-06T17:41:29.537537 #21529]  INFO -- default-centos-69:   python-httplib2.noarch 0:0.7.7-1.el6                                          
+I, [2019-02-06T17:41:29.537553 #21529]  INFO -- default-centos-69:   python-jinja2-26.noarch 0:2.6-3.el6                                           
+I, [2019-02-06T17:41:29.537568 #21529]  INFO -- default-centos-69:   python-keyczar.noarch 0:0.71c-1.el6                                           
+I, [2019-02-06T17:41:29.537601 #21529]  INFO -- default-centos-69:   python-markupsafe.x86_64 0:0.9.2-4.el6                                        
+I, [2019-02-06T17:41:29.537616 #21529]  INFO -- default-centos-69:   python-paramiko.noarch 0:1.7.5-5.el6_10                                       
+I, [2019-02-06T17:41:29.537630 #21529]  INFO -- default-centos-69:   python-pyasn1.noarch 0:0.0.12a-1.el6                                          
+I, [2019-02-06T17:41:29.537659 #21529]  INFO -- default-centos-69:   python-setuptools.noarch 0:0.6.10-4.el6_9                                     
+I, [2019-02-06T17:41:29.537674 #21529]  INFO -- default-centos-69:   python-simplejson.x86_64 0:2.0.9-3.1.el6                                      
+I, [2019-02-06T17:41:29.537688 #21529]  INFO -- default-centos-69:   python-six.noarch 0:1.9.0-2.el6                                               
+I, [2019-02-06T17:41:29.537703 #21529]  INFO -- default-centos-69:   rsync.x86_64 0:3.0.6-12.el6                                                   
+I, [2019-02-06T17:41:29.538455 #21529]  INFO -- default-centos-69:   sshpass.x86_64 0:1.06-1.el6                                                   
+I, [2019-02-06T17:41:29.538776 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:29.539384 #21529]  INFO -- default-centos-69: Complete!
+I, [2019-02-06T17:41:29.567334 #21529]  INFO -- default-centos-69: -----> Installing Chef Omnibus to install busser to run tests
+I, [2019-02-06T17:41:29.567753 #21529]  INFO -- default-centos-69: downloading https://www.chef.io/chef/install.sh
+I, [2019-02-06T17:41:29.568118 #21529]  INFO -- default-centos-69:   to file /tmp/install.sh
+I, [2019-02-06T17:41:29.568662 #21529]  INFO -- default-centos-69: trying curl...
+I, [2019-02-06T17:41:29.742377 #21529]  INFO -- default-centos-69:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+I, [2019-02-06T17:41:29.744702 #21529]  INFO -- default-centos-69:                           Dload  Upload   Total   Spent    Left  Speed
+I, [2019-02-06T17:41:29.775294 #21529]  INFO -- default-centos-69:   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100 23110  100 23110    0     0   112k      0 --:--:-- --:--:-- --:--:--  470k
+I, [2019-02-06T17:41:30.733684 #21529]  INFO -- default-centos-69: warning: /tmp/install.sh.176/chef-14.10.9-1.el6.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
+I, [2019-02-06T17:41:36.189898 #21529]  INFO -- default-centos-69: Transferring files to <default-centos-69>
+I, [2019-02-06T17:41:37.957401 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:37.957838 #21529]  INFO -- default-centos-69: PLAY [all] *********************************************************************
+I, [2019-02-06T17:41:37.973776 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:37.973823 #21529]  INFO -- default-centos-69: TASK [Gathering Facts] *********************************************************
+I, [2019-02-06T17:41:40.203214 #21529]  INFO -- default-centos-69: [0;32mok: [localhost][0m
+I, [2019-02-06T17:41:40.315419 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:40.315486 #21529]  INFO -- default-centos-69: TASK [apache : ip] *************************************************************
+I, [2019-02-06T17:41:40.589538 #21529]  INFO -- default-centos-69: [1;35m [WARNING]: Consider using the get_url or uri module rather than running curl.[0m
+I, [2019-02-06T17:41:40.589600 #21529]  INFO -- default-centos-69: [1;35mIf you need to use command because get_url or uri is insufficient you can add[0m
+I, [2019-02-06T17:41:40.589622 #21529]  INFO -- default-centos-69: [1;35mwarn=False to this command task or set command_warnings=False in ansible.cfg to[0m
+I, [2019-02-06T17:41:40.589638 #21529]  INFO -- default-centos-69: [1;35mget rid of this message.[0m
+I, [2019-02-06T17:41:40.589654 #21529]  INFO -- default-centos-69: [1;35m[0m
+I, [2019-02-06T17:41:40.590159 #21529]  INFO -- default-centos-69: [0;33mchanged: [localhost][0m
+I, [2019-02-06T17:41:40.706041 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:40.706106 #21529]  INFO -- default-centos-69: TASK [apache : set_fact] *******************************************************
+I, [2019-02-06T17:41:40.731111 #21529]  INFO -- default-centos-69: [0;32mok: [localhost][0m
+I, [2019-02-06T17:41:40.840841 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:40.840903 #21529]  INFO -- default-centos-69: TASK [apache : Installing Apache] **********************************************
+I, [2019-02-06T17:41:50.086517 #21529]  INFO -- default-centos-69: [0;33mchanged: [localhost][0m
+I, [2019-02-06T17:41:50.219902 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:50.219980 #21529]  INFO -- default-centos-69: TASK [apache : Enabling httpd @ runlevel] **************************************
+I, [2019-02-06T17:41:50.384322 #21529]  INFO -- default-centos-69: [0;33mchanged: [localhost][0m
+I, [2019-02-06T17:41:50.500313 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:50.500385 #21529]  INFO -- default-centos-69: TASK [apache : Modifying httpd.conf file] **************************************
+I, [2019-02-06T17:41:50.767808 #21529]  INFO -- default-centos-69: [0;33mchanged: [localhost][0m
+I, [2019-02-06T17:41:50.884065 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:50.884133 #21529]  INFO -- default-centos-69: TASK [apache : Copying the index.html file] ************************************
+I, [2019-02-06T17:41:51.377339 #21529]  INFO -- default-centos-69: [0;33mchanged: [localhost][0m
+I, [2019-02-06T17:41:51.378441 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:51.378499 #21529]  INFO -- default-centos-69: RUNNING HANDLER [apache : httpd restart] ***************************************
+I, [2019-02-06T17:41:51.918872 #21529]  INFO -- default-centos-69: [0;33mchanged: [localhost][0m
+I, [2019-02-06T17:41:51.921709 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:51.921761 #21529]  INFO -- default-centos-69: PLAY RECAP *********************************************************************
+I, [2019-02-06T17:41:51.922227 #21529]  INFO -- default-centos-69: [0;33mlocalhost[0m                  : [0;32mok=8   [0m [0;33mchanged=6   [0m unreachable=0    failed=0   
+I, [2019-02-06T17:41:51.922643 #21529]  INFO -- default-centos-69: 
+I, [2019-02-06T17:41:51.962270 #21529]  INFO -- default-centos-69: Downloading files from <default-centos-69>
+I, [2019-02-06T17:41:51.966002 #21529]  INFO -- default-centos-69: Finished converging <default-centos-69> (1m7.33s).
+I, [2019-02-06T17:41:51.966164 #21529]  INFO -- default-centos-69: -----> Setting up <default-centos-69>...
+I, [2019-02-06T17:41:51.966815 #21529]  INFO -- default-centos-69: Finished setting up <default-centos-69> (0m0.00s).
+I, [2019-02-06T17:41:51.967011 #21529]  INFO -- default-centos-69: -----> Verifying <default-centos-69>...
+I, [2019-02-06T17:41:51.967444 #21529]  INFO -- default-centos-69: Preparing files for transfer
+I, [2019-02-06T17:41:51.967753 #21529]  INFO -- default-centos-69: Transferring files to <default-centos-69>
+I, [2019-02-06T17:41:51.968234 #21529]  INFO -- default-centos-69: Finished verifying <default-centos-69> (0m0.00s).
+I, [2019-02-06T17:41:51.968580 #21529]  INFO -- default-centos-69: -----> Destroying <default-centos-69>...
+I, [2019-02-06T17:41:52.183178 #21529]  INFO -- default-centos-69: UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+I, [2019-02-06T17:41:52.183257 #21529]  INFO -- default-centos-69: root                25003               24986               0                   17:40               ?                   00:00:00            /usr/sbin/sshd -D -o UseDNS=no -o UsePAM=no -o PasswordAuthentication=yes -o UsePrivilegeSeparation=no -o PidFile=/tmp/sshd.pid
+I, [2019-02-06T17:41:52.183285 #21529]  INFO -- default-centos-69: root                25059               25003               0                   17:40               ?                   00:00:00            sshd: kitchen@notty
+I, [2019-02-06T17:41:52.183306 #21529]  INFO -- default-centos-69: root                25071               25003               0                   17:40               ?                   00:00:00            sshd: kitchen@notty
+I, [2019-02-06T17:41:52.183326 #21529]  INFO -- default-centos-69: root                26027               25003               0                   17:41               ?                   00:00:00            /usr/sbin/httpd
+I, [2019-02-06T17:41:52.183344 #21529]  INFO -- default-centos-69: 48                  26029               26027               0                   17:41               ?                   00:00:00            /usr/sbin/httpd
+I, [2019-02-06T17:41:52.183368 #21529]  INFO -- default-centos-69: 48                  26030               26027               0                   17:41               ?                   00:00:00            /usr/sbin/httpd
+I, [2019-02-06T17:41:52.183386 #21529]  INFO -- default-centos-69: 48                  26031               26027               0                   17:41               ?                   00:00:00            /usr/sbin/httpd
+I, [2019-02-06T17:41:52.183404 #21529]  INFO -- default-centos-69: 48                  26032               26027               0                   17:41               ?                   00:00:00            /usr/sbin/httpd
+I, [2019-02-06T17:41:52.183421 #21529]  INFO -- default-centos-69: 48                  26033               26027               0                   17:41               ?                   00:00:00            /usr/sbin/httpd
+I, [2019-02-06T17:41:52.183437 #21529]  INFO -- default-centos-69: 48                  26034               26027               0                   17:41               ?                   00:00:00            /usr/sbin/httpd
+I, [2019-02-06T17:41:52.183455 #21529]  INFO -- default-centos-69: 48                  26035               26027               0                   17:41               ?                   00:00:00            /usr/sbin/httpd
+I, [2019-02-06T17:41:52.183478 #21529]  INFO -- default-centos-69: 48                  26036               26027               0                   17:41               ?                   00:00:00            /usr/sbin/httpd
+I, [2019-02-06T17:41:52.589966 #21529]  INFO -- default-centos-69: 57c463010b5f1d794e83e0c00c4a6a9d22e687c02b9a2a68ffe972d3e6ab8a8b
+I, [2019-02-06T17:41:53.107981 #21529]  INFO -- default-centos-69: 57c463010b5f1d794e83e0c00c4a6a9d22e687c02b9a2a68ffe972d3e6ab8a8b
+I, [2019-02-06T17:41:53.130500 #21529]  INFO -- default-centos-69: Finished destroying <default-centos-69> (0m1.16s).
+I, [2019-02-06T17:41:53.131047 #21529]  INFO -- default-centos-69: Finished testing <default-centos-69> (1m36.32s).
