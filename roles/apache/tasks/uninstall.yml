@@ -1,0 +1,8 @@
+---
+ - name: ip
+   command: curl http://169.254.169.254/latest/meta-data/public-ipv4
+   register: output
+ - set_fact: ipaddress="{{output.stdout}}"
+
+ - name: Uninstalling Apache
+   yum: name=httpd state=absent
