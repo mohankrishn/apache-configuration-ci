@@ -1,4 +1,4 @@
-#- name: Intsalling Apache
-#  include: install.yml
-- name: Uninstalling Apache
-  include: uninstall.yml
+- name: Intsalling Apache
+  include: install.yml
+#- name: Uninstalling Apache
+#  include: uninstall.yml
