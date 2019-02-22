@@ -1,1 +1,5 @@
 
+#- name: Intsalling Apache
+#  include: install.yml
+- name: Uninstalling Apache
+  include: uninstall.yml
